@@ -1,8 +1,8 @@
-class Triangulo extends Figura {
+class Triangulo extends Figure {
 
-    constructor(posX, posY, width, height, fill, context, estilo) 
+    constructor(posX, posY, fill, context, estilo) 
     {
-        super(posX, posY, width, height, fill, context, estilo);
+        super(posX, posY, fill, context, estilo);
     }
 
     // crea un triangulo

@@ -1,7 +1,7 @@
-class Ellipse extends Figura {
-    constructor(posX, posY, width, height, fill, context, estilo)
+class Ellipse extends Figure {
+    constructor(posX, posY, fill, context, estilo)
     {
-        super(posX, posY, width, height, fill, context, estilo);
+        super(posX, posY, fill, context, estilo);
     }
 
     draw()

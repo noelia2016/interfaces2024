@@ -1,7 +1,7 @@
-class Cuadrado extends Figura {
-    constructor(posX, posY, width, height, fill, context, estilo) 
+class Cuadrado extends Figure {
+    constructor(posX, posY, fill, context, estilo) 
     {
-        super(posX, posY, width, height, fill, context, estilo);
+        super(posX, posY, fill, context, estilo);
     }
 
     // crea un cuadrado

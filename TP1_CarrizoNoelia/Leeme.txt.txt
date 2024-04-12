@@ -1,0 +1,3 @@
+Inicia con x cantidad de figuras diferentes creadas de forma aleatoria
+
+Para saber si un punto pertenece a la figura tenes que hacer click con el boton y te indica si pertenece o no a la figura
