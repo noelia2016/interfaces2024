@@ -1,0 +1,14 @@
+body {
+	font-family: Times, "Times New Roman", Georgia, serif;
+}
+
+
+ul, li {
+    background-color: #47332B;
+}
+
+canvas {
+    width: 800px;
+    height: 800px;
+    border: #4404f3 solid 1px;
+}

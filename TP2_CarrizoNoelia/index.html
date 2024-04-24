@@ -4,6 +4,7 @@
 <head>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 	<title>Entregable TP2 - Carrizo Noelia</title>
 </head>
@@ -12,8 +13,8 @@
 	<div class="container">
         <div class="row align-items">
             <div class="col-12">
-                <ul class="nav nav-pills navbar-light" style="background-color: #47332B;">
-                    <li class="nav-item dropdown" style="background-color: #47332B;">
+                <ul class="nav nav-pills navbar-light">
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown"  role="button" aria-haspopup="true" aria-expanded="false">Archivo</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" id="newFile" role="button">Nuevo</a>
@@ -23,27 +24,27 @@
                     <li class="nav-item dropdown" style="background-color: #47332B;">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown"  role="button" aria-haspopup="true" aria-expanded="false">Inicio</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" id="pencil" role="button">Lapiz</a>
+                            <a class="dropdown-item" id="lapiz" role="button">Lapiz</a>
                             <a class="dropdown-item" role="button">Grosor
-                                <input type="range" min="1" max="40" value="10" id="pencil-size" />
+                                <input type="range" min="1" max="40" value="10" id="lapiz-size" />
                             </a>
-                            <a class="dropdown-item" id="eraser" role="button">Goma</a>
+                            <a class="dropdown-item" id="borrar" role="button">Goma</a>
                     </li>
-                    <li class="nav-item dropdown" style="background-color: #47332B;">
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown"  role="button" aria-haspopup="true" aria-expanded="false">Filtros</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" id="sepia" role="button">Sepia</a>
 							<a class="dropdown-item" id="negative" role="button">Negativo</a>
-							<a class="dropdown-item" role="button" id="light">Brillo
+							<!--a class="dropdown-item" role="button" id="light">Brillo
 								<input type="range" min="1" max="8" value="1" step="0.001" id="light-value" />
-							</a>
+							</a-->
 							<a class="dropdown-item" id="binary" role="button">Binarizacion</a>
 							<a class="dropdown-item" id="grey-scale" role="button">Escala de grises</a>
 							<a class="dropdown-item" id="edge-detection" role="button">Deteccion de bordes</a>
 							<a class="dropdown-item" id="blur" role="button">Blur</a>
-							<a class="dropdown-item" role="button" id="contrast">Contraste
+							<!--a class="dropdown-item" role="button" id="contrast">Contraste
 								<input type="range" min="-255" max="255" value="100" step="0.1" id="contrast-value" />
-							</a>
+							</a-->
 						</div>
 					</li>
                 </ul> 
@@ -51,12 +52,12 @@
 					<h2 class="mb-0">Aplica filtros y dibuja en Paint</h2>
 				</blockquote>
 				<div class="col-12 text-center">
-					<canvas id="canvas" width="800" height="800" style="border: #000 solid 1px;">
+					<canvas id="canvas">
 						Tu browser no suporta canvas
 					</canvas>
 				</div>
 				<div class="col-12 text-center">
-					<footer class="blockquote-footer">Carrizo Noelia - Interface 2023 - TPE 2</footer>
+					<footer class="blockquote-footer">Carrizo Noelia - Interface 2023 - TP Entregable 2</footer>
 				</div>
             </div>
         </div>
@@ -68,7 +69,7 @@
 
 	<!-- Carga los scripts necesario para el uso de canvas -->
 	<script src="./js/Filtro.js"></script>
-	<script src="./js/Pen.js"></script>
+	<!--script src="./js/Pen.js"></script-->
 	<script src="./js/Main.js"></script>
 </body>
 
