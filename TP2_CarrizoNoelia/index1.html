@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+	<title>Entregable TP2 - Carrizo Noelia</title>
+</head>
+
+<body>
+	<div class="container">
+        <div class="row align-items">
+            <div class="col-12">
+                <ul class="nav nav-pills navbar-light">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown"  role="button" aria-haspopup="true" aria-expanded="false">Archivo</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" id="newFile" role="button">Nuevo</a>
+                            <a class="dropdown-item" role="button" ><input id="openFile" type="file"></a>
+                            <a class="dropdown-item" download="image.jpg" id="downloadFile" role="button">Descargar imagen</a>
+                    </li>
+                    <!--li class="nav-item dropdown" style="background-color: #47332B;">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown"  role="button" aria-haspopup="true" aria-expanded="false">Inicio</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" id="lapiz" role="button">Lapiz</a>
+                            <a class="dropdown-item" role="button">Grosor
+                                <input type="range" min="1" max="40" value="10" id="lapiz-size" />
+                            </a>
+                            <a class="dropdown-item" id="borrar" role="button">Goma</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown"  role="button" aria-haspopup="true" aria-expanded="false">Filtros</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" id="sepia" role="button">Sepia</a>
+							<a class="dropdown-item" id="negative" role="button">Negativo</a>
+							<!--a class="dropdown-item" role="button" id="light">Brillo
+								<input type="range" min="1" max="8" value="1" step="0.001" id="light-value" />
+							</a->
+							<a class="dropdown-item" id="binary" role="button">Binarizacion</a>
+							<a class="dropdown-item" id="grey-scale" role="button">Escala de grises</a>
+							<a class="dropdown-item" id="edge-detection" role="button">Deteccion de bordes</a>
+							<a class="dropdown-item" id="blur" role="button">Blur</a>
+							<!--a class="dropdown-item" role="button" id="contrast">Contraste
+								<input type="range" min="-255" max="255" value="100" step="0.1" id="contrast-value" />
+							</a>
+						</div>
+					</li-->
+                </ul>
+				<br/> 
+				<blockquote class="blockquote text-center">
+					<h2 class="mb-0">Aplica filtros y dibuja en Paint</h2>
+				</blockquote>
+				<div class="col-12 text-center">
+					<div class="col-10 h-100 bg-secondary d-flex">
+						<div class="h-0 p-0 m-0 w0 position absolute">
+							<button class="btn btn-dark rounded-pill p-2 d-flex align-items-start position-absolute mt-4" id="btn-restore-canvas">
+								<i class="fas fa-undo "></i>
+							</button>
+						</div>
+					</div>
+					<canvas class="w-100 h-800 d-flex" id="canvas">
+						Tu browser no suporta canvas
+					</canvas>
+				</div>
+				<div class="col-12 text-center row fs-6 row-1">
+					<button class="btn btn-secondary rounded-pill w-auto" id="lapiz">
+						<i class="fas fa-edit"></i>
+					</button>
+					<button class="btn btn-secondary rounded-pill w-auto" id="goma">
+						<i class="fas fa-eraser"></i>
+					</button>
+					<div class="row d-flex flex-row">
+						<div class="col-3">
+							<label class="p-0 m-0">Color: </label>
+							<input class="form-color" type="color" name="color" id="color">
+						</div>
+					</div>
+					<div class="row d-flex flex-row flex-nowrap"></div>
+						<div class="col-3"></div>
+							<label class="p-0 m-0">Tamaño</label>
+							<input class="form-range" type="range" name="grosor" id="grosor" value="1" min="1" max="50">
+						</div>
+					</div>
+				</div>
+				<!-- Filtros ->
+				<div class="col-12 text-center">
+				<div class="row  fs-6 row-3">
+				<button class="btn btn-secondary w-100 row-3" type="button" data-bs-toggle="collapse" data-bs-target=".row-3 .div-collapse, .row-2 .div-collapse.collapse.show, .row-1 .div-collapse.collapse.show" aria-expanded="false">
+					Filtros
+				</button>
+				<div class="filter div-collapse collapse  mt-3" id="form-filter-collapse">
+					<form action="#" id="inputFilter">
+						<label lass="form-label">Saturación:</label>
+						<input type="range" class="form-range" min="0" max="100" value="0" data-filter-type="saturation">
+						<label lass="form-label">Blur</label>
+						<input type="range" class="form-range" min="0" max="100" value="0" data-filter-type="blur">
+						<label lass="form-label">Escala de grises</label>
+						<input type="range" class="form-range" min="0" max="100" value="0" data-filter-type="grayScale">
+						<label lass="form-label">Color negativo</label>
+						<input type="range" class="form-range" min="0" max="100" value="0" data-filter-type="invertColor">
+						<label lass="form-check-label">Sobel</label>
+						<input type="range" class="form-range" min="0" max="100" value="0" data-filter-type="sobel">
+						<label lass="form-check-label">Binarización</label>
+						<input type="range" class="form-range" min="0" max="100" value="0" data-filter-type="binarization">
+						<label lass="form-check-label">Invertir imagen</label>
+						<input class="form-check-input" type="checkbox" value="false" id="flexCheckDefault" data-filter-type="invertImage">
+						<button type="submit" class="btn btn-secondary mt-2 w-100">Aplicar</button>
+					</form>
+				</div>
+			</div->
+		</div-->
+			<div class="col-12 text-center">
+				<br>
+				<footer class="blockquote-footer">Carrizo Noelia - Interface 2023 - TP Entregable 2</footer>
+				<br>
+			</div>
+        </div>
+    </div>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+	<!-- Carga los scripts necesario para el uso de canvas -->
+	<script src="js/Filtro.js"></script>
+	
+	<!--script src="./js/Pen.js"></script-->
+	<script src="js/Main.js"></script>
+	<script src="js/Tools.js"></script>
+</body>
+
+</html>

@@ -51,23 +51,16 @@ openFile.addEventListener("change", e => {
         image.onload = function () {
 
             // adapto la imagen a mi canvas
-            let imageAspectRatio = (1.0 * this.height) / this.width;
-            let imageScaledWidth;
-            let imageScaledHeight;
-
-            if (this.width > this.height) {
-                imageScaledWidth= canvas.height;
-                imageScaledHeight= canvas.height * imageAspectRatio;
-            }else{
-                imageScaledWidth= canvas.width;
-                imageScaledHeight= canvas.width * imageAspectRatio;
-            }
+            var hRatio = canvas.width  / image.width    ;
+            var vRatio =  canvas.height / image.height  ;
+            var ratio  = Math.max ( hRatio, vRatio );
+            canvas.width  = image.width * ratio; 
+            canvas.height = image.height * ratio; 
 
             // muestro la imagen en el canvas
-            context.drawImage(this, 0, 0, imageScaledWidth, imageScaledHeight);
-
+            context.drawImage(this, 0, 0, canvas.width, canvas.height);
             // obtener imageData del contenido del lienzo
-            let imageData = context.getImageData(0, 0, imageScaledWidth, imageScaledHeight);
+            let imageData = context.getImageData(0, 0, canvas.width, canvas.height);
             
             // dibuja la imagen modificada
             context.putImageData(imageData, 0, 0);
