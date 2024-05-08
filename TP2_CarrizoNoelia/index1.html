@@ -19,20 +19,11 @@
             <div class="col-12">
                 <ul class="nav nav-pills navbar-light">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown"  role="button" aria-haspopup="true" aria-expanded="false">Archivo</a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Archivo</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" id="newFile" role="button">Nuevo</a>
                             <a class="dropdown-item" role="button" ><input id="openFile" type="file"></a>
                             <a class="dropdown-item" download="image.jpg" id="downloadFile" role="button">Descargar imagen</a>
-                    </li>
-                    <!--li class="nav-item dropdown" style="background-color: #47332B;">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown"  role="button" aria-haspopup="true" aria-expanded="false">Inicio</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" id="lapiz" role="button">Lapiz</a>
-                            <a class="dropdown-item" role="button">Grosor
-                                <input type="range" min="1" max="40" value="10" id="lapiz-size" />
-                            </a>
-                            <a class="dropdown-item" id="borrar" role="button">Goma</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown"  role="button" aria-haspopup="true" aria-expanded="false">Filtros</a>
@@ -48,7 +39,7 @@
 							<a class="dropdown-item" id="blur" role="button">Blur</a>
 							<!--a class="dropdown-item" role="button" id="contrast">Contraste
 								<input type="range" min="-255" max="255" value="100" step="0.1" id="contrast-value" />
-							</a>
+							</a-->
 						</div>
 					</li-->
                 </ul>
@@ -88,7 +79,7 @@
 						</div>
 					</div>
 				</div>
-				<!-- Filtros ->
+				<!-- Filtros -->
 				<div class="col-12 text-center">
 				<div class="row  fs-6 row-3">
 				<button class="btn btn-secondary w-100 row-3" type="button" data-bs-toggle="collapse" data-bs-target=".row-3 .div-collapse, .row-2 .div-collapse.collapse.show, .row-1 .div-collapse.collapse.show" aria-expanded="false">
@@ -129,7 +120,10 @@
 
 	<!-- Carga los scripts necesario para el uso de canvas -->
 	<script src="js/Filtro.js"></script>
-	
+	<script src="js/FiltroSepia.js"></script>
+	<script src="js/FiltroNegativo.js"></script>
+	<script src="js/FiltroMonocromo.js"></script>
+	<script src="js/FiltroDetencionDeBorde.js"></script>
 	<!--script src="./js/Pen.js"></script-->
 	<script src="js/Main.js"></script>
 	<script src="js/Tools.js"></script>

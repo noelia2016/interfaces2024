@@ -18,7 +18,7 @@ let drawing = false;
 
 // 1.2  Colores para pintar y borrar:
 let pencilColor = "black";
-let cleanColor = "white";
+let cleanColor = "white"; // siempre va a tener este color
 
 // 1.3 Varible para manejar el grosor del lápiz:
 let pencilWidth = "2";

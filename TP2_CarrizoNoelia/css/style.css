@@ -6,12 +6,25 @@ html, body, full-screen-height {
 body {
 	font-family: Times, "Times New Roman", Georgia, serif;
     font-size: 20px;
-    background-color: #5c1b01;
+    background-color: #AA3939;
 }
 
+/*.dropdown-item {
+    background-color: #801515;
+}*/
 
-ul, li {
-    background-color: #47332B;
+/*.dropdown-menu ul li a {
+    background-color: #801515;
+}*/
+
+.dropdown-item:hover {
+    background:#FFAAAA;
+    color:white;
+}
+
+/* le da color al menu de arriba */
+ul {
+    background-color: #801515;
 }
 
 #paint {

@@ -69,20 +69,31 @@
                     </button>
                     <div class="filter div-collapse collapse mt-3" id="form-filter-collapse">
                         <form action="#" id="inputFilter">
+                            <label lass="form-label">Escala de grises</label>
+                            <input type="range" class="form-range" min="0" max="100" value="0" data-filter-type="grayScale">
+                            <label lass="form-label">Color negativo</label>
+                            <input type="range" class="form-range" min="0" max="100" value="0" data-filter-type="sobel">
+                            <label lass="form-check-label">Binarización</label>
+                            <input type="range" class="form-range" min="0" max="100" value="0" data-filter-type="binarization">
+                            <label lass="form-check-label">Invertir Imagen</label>
+                            <input class="form-check-input" type="checkbox" value="false" id="flexCheckDefault" data-filter-type="invertImage">
+                            <button type="submit" class="btn btn-secondary mt-2 w-100">Aplicar</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- Filtros avanzados -->
+                <div class="row my-2 d-flex fs-6 row-2">
+                    <button class="btn btn-secondary w-100 row-3" type="button" data-bs-toggle="collapse" data-bs-target=".row-2 .div-collapse, .row-1 .div-collapse.collapse.show, .row-3 .div-collapse.collapse.show" aria-expanded="false">
+                        Filtros avanzados
+                    </button>
+                    <div class="row div-collapse collapse mt-3">
+                        <form action="#" id="inputFilterAvan">
                             <label lass="form-label">Saturación:</label>
                             <input type="range" class="form-range" min="0" max="100" value="0" data-filter-type="saturation">
                             <label lass="form-label">Blur</label>
                             <input type="range" class="form-range" min="0" max="100" value="0" data-filter-type="blur">
-                            <label lass="form-label">Escala de grises</label>
-                            <input type="range" class="form-range" min="0" max="100" value="0" data-filter-type="grayScale">
-                            <label lass="form-label">Color negativo</label>
-                            <input type="range" class="form-range" min="0" max="100" value="0" data-filter-type="invertColor">
-                            <label lass="form-check-label">Sobel</label>
+                            <label lass="form-check-label">Sobel </label>
                             <input type="range" class="form-range" min="0" max="100" value="0" data-filter-type="sobel">
-                            <label lass="form-check-label">Binarización</label>
-                            <input type="range" class="form-range" min="0" max="100" value="0" data-filter-type="binarization">
-                            <label lass="form-check-label">Invertir imagen</label>
-                            <input class="form-check-input" type="checkbox" value="false" id="flexCheckDefault" data-filter-type="invertImage">
                             <button type="submit" class="btn btn-secondary mt-2 w-100">Aplicar</button>
                         </form>
                     </div>
@@ -108,11 +119,15 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
 	<!-- Carga los scripts necesario para el uso de canvas -->
-	<script src="js/Filtro.js"></script>
-	
-	<!--script src="./js/Pen.js"></script-->
+	<!--script src="js/Filtro.js"></script>
+    <script src="js/FiltroNegativo.js"></script-->
+	<script src="js/ImagenFiltros.js"></script>
 	<script src="js/Main.js"></script>
 	<script src="js/Tools.js"></script>
 	
+	<!--script src="js/FiltroSepia.js"></script-->
+	<!--script src="js/FiltroNegativo.js"></script>
+	<script src="js/FiltroMonocromo.js"></script>
+	<script src="js/FiltroDetencionDeBorde.js"></script-->
 </body>
 </html>

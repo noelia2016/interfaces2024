@@ -4,7 +4,7 @@ let context = canvas.getContext('2d');
 
 let canvasWidth = canvas.width;
 let canvasHeight = canvas.height;
-
+console.log(canvasWidth,canvasHeight);
 // tomo los elementos
 let archivo = document.querySelector("#newFile");
 let openFile = document.querySelector("#openFile");
@@ -23,6 +23,48 @@ function nuevoProyecto(){
 function downloadImage () {
     let image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
     downloadFile.setAttribute("href", image);
+}
+
+function aplicarFiltrosImagen() {
+    // 1. Seleccionando el formulario HTML que contiene los filtros 
+    // Creación de una copia del canvas
+    let inputsFilters = e.target;
+    let inputImagen  = ctx.getImageData(canvas.clientLeft, canvas.clientTop, canvas.width, canvas.height);
+    
+    // 2.1.0 Seleccionando los inputs tipo rango
+    inputsFilters.querySelectorAll("input[type=range]").forEach( input => {
+        
+        // obtengo filtro particular, se guarda en su respectivo input
+        // en un atributo con nombre "data-filter-type" 
+        let filter = input.getAttribute("data-filter-type");
+
+        // se recupera el valor del rango
+        let intensity = input.value ?? 0;
+
+        // En caso de que la intensidad, el valor del rango, no sea mayor a 0, no se llaman a los filtros
+        if(intensity > 0) {
+            // Se crea una nueva copia del canvas "outputImagen", esto para no editar la misma
+            // imagen de la cual se está obteniendo la información para aplicar los filtros
+            let outputImagen = ctx.getImageData(canvas.clientLeft, canvas.clientTop, canvas.width, canvas.height);
+            
+            // Utilizando la variable "filter" llamo a su respectivo método, pasando las variables correspondientes
+            // Se iguala el valor de la variable "inputImagen" al valor de retorno de la función de un filtro, 
+            // a pesar de que la misma función retorna la variable "outputImagen", la cual ya contiene los efectos de los
+            // los filtros aplicados. Esto se hace con la razón de poder aplicar filtros consecutivos
+            // sobre la misma imagen
+            inputImagen = ImageFilters[filter](inputImagen, outputImagen, intensity);
+        }
+    });
+    
+    // Adaptado a los inputs tipo checkbox
+    inputsFilters.querySelectorAll("input[type=checkbox]:checked").forEach( input => {
+        let outputImagen = ctx.getImageData(canvas.clientLeft, canvas.clientTop, canvas.width, canvas.height);
+        let filter = input.getAttribute("data-filter-type")
+        inputImagen = ImageFilters[filter](inputImagen, outputImagen);
+    });
+
+    // Se coloca la imagen editada en el canvas
+    ctx.putImageData(inputImagen, canvas.clientLeft, canvas.clientTop);
 }
 
 // abre un canvas vacio cuando presiona nuevo en el menu
@@ -72,6 +114,8 @@ openFile.addEventListener("change", e => {
 
 //Evento al querer descargar la imagen que trabaje en el paint con filtros y demas
 downloadFile.addEventListener("click", downloadImage);
+
+
 
 
 
