@@ -5,34 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/f2271d3f87.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <title>TUDAI - Interfaces 2024</title>
 </head>
 <body>
-<nav class="menu bg-violeta4">
-    <ul class="letra-verdana1 color-blanco">
-        <div class="logo">
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <div class="logo">
             <a href="index.html"> <img class="img-logo" src="img/Hilton-Logo.jpg" alt="Logo del Hotel"></a>
-        </div>
-        <div class="menuMobile">
-            <div class="opcionesMenu">
-                <li><a href="index.html"> Home</a></li>
-                <li><a href="#"> Habitaciones </a></li>
-                <li><a href="#"> Restaurant </a></li>
-                <li><a href="consulta.html"> Consulta </a></li>
-                <li><a href="#"> Conocenos </a></li>
             </div>
+            </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Home
+                  <span class="visually-hidden">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Habitaciones</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Restaurant</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Acerca de nosotros</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-sm-2" type="search" placeholder="Search">
+              <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
         </div>
-        <button class="icon-menu bg-violeta4"><i class="color-blanco menuResponsive fa-solid fa-bars"></i></button>
-    </ul>
-    <div id="contenedor-loader">
-        <!-- este se usa para ver que se esta cargando el formulario-->
-        <div id="loader"></div>
-        <p id="texto-loader">Loading...</p>
-
-    </div>
-</nav>
-<div class="registro-contenedor">
+      </nav>
+<div class="login-contenedor">
     <div class="signup2">
         <form>
             <h2>Dejanos tu Consulta</h2>
@@ -60,7 +74,7 @@
                     <textarea id="observaciones" class="inputReg" rows="10" cols="50" maxlength="500"></textarea>
                     
                 </div>
-                <button type="button" class="btn btn-primary boton bg-azul color-blanco">Enviar consulta</button>
+                <button class="boton bg-azul color-blanco">Enviar consulta</button>
             </div>
 
         </form>
