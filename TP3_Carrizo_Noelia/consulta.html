@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/f2271d3f87.js" crossorigin="anonymous"></script>
+    <link href="css/style.css" rel="stylesheet">
+    <title>TUDAI - Interfaces 2024</title>
+</head>
+<body>
+<nav class="menu bg-violeta4">
+    <ul class="letra-verdana1 color-blanco">
+        <div class="logo">
+            <a href="index.html"> <img class="img-logo" src="img/Hilton-Logo.jpg" alt="Logo del Hotel"></a>
+        </div>
+        <div class="menuMobile">
+            <div class="opcionesMenu">
+                <li><a href="index.html"> Home</a></li>
+                <li><a href="#"> Habitaciones </a></li>
+                <li><a href="#"> Restaurant </a></li>
+                <li><a href="consulta.html"> Reserva </a></li>
+                <li><a href="#"> Conocenos </a></li>
+            </div>
+        </div>
+        <button class="icon-menu bg-violeta4"><i class="color-blanco menuResponsive fa-solid fa-bars"></i></button>
+    </ul>
+    <div id="contenedor-loader">
+        <!-- este se usa para ver que se esta cargando el formulario-->
+        <div id="loader"></div>
+        <p id="texto-loader">Loading...</p>
+
+    </div>
+</nav>
+<div class="login-contenedor">
+    <div class="signup2">
+        <form>
+            <h2>Dejanos tu Consulta</h2>
+            <div class="contenedorLogin">
+                <div class="labelInput">
+                    <label class="color-blanco label">Nombre y apellido:</label>
+                    <input type="text" class="inputReg" required>
+
+                    <label class="color-blanco label">Telefono:</label>
+                    <input type="text" class="inputReg" required>
+
+                    <label class="color-blanco label">Email:</label>
+                    <input type="password" class="inputReg" required>
+
+                    <label class="color-blanco label">Telefono:</label>
+                    <input type="password" class="inputReg" required>
+
+                    <label class="color-blanco label">Fecha disponibilidad desde:</label>
+                    <input type="date" class="inputReg" required>
+
+                    <label class="color-blanco label">Hasta:</label>
+                    <input type="date" class="inputReg" required>
+
+                    <label class="color-blanco label">Observaciones:</label>
+                    <textarea id="observaciones" class="inputReg" rows="10" cols="50" maxlength="500"></textarea>
+                    
+                </div>
+                <button class="boton bg-azul color-blanco">Enviar consulta</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<script src="js/animacion-loader.js"></script>
+<script src="js/main.js"></script>
+
+</html>
