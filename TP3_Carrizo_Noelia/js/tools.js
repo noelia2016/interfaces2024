@@ -1,19 +1,19 @@
 temporizadorDeRetraso();
 
+/** despues de unos segundos el contenedor se tiene que esconder */
 function temporizadorDeRetraso() {
     setTimeout(loaderF, 2000);
 }
 
 function loaderF() {
-    let contenedorLoader = document.querySelector('#contenedor-loader');
 
-    console.log('hola mundo!');
+    let contenedorLoader = document.querySelector('#contenedor-loader');
     contenedorLoader.style.opacity = 0;
     contenedorLoader.style.visibility = 'hidden';
     contenedorLoader.style.display = 'none';
 }
 
-
+// tomo el evento
 document.addEventListener("DOMContentLoaded", function(e) {
 
 

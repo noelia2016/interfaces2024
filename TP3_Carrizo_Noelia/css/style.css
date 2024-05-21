@@ -502,6 +502,7 @@ a {
     }
   }
 
+  /* una animacion de carga */
 #contenedor-loader {
     width: 90%;
     max-width: 700px;
@@ -509,6 +510,7 @@ a {
     position: relative;
     justify-items: center;
 }
+
 
 
 /* spinner positioning */
@@ -815,8 +817,8 @@ hr {
   /* para el fondo de la pagina */
   .multi_bg_example {
     width: 100%;
-    height: 1500px;
-    background-image: url(../img/bubbles.png), url(../img/bubbles.png), linear-gradient(to right, rgb(255, 189, 189), rgba(255, 255, 255, 0));
+    height: 1300px;
+    background-image:  url(../img/bubbles1.png), url(../img/bubbles.png), linear-gradient(to right, rgb(255, 189, 189), rgba(255, 255, 255, 0));
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position:
       bottom right,
