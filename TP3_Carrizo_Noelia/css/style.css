@@ -1,7 +1,7 @@
 * {
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 body {
@@ -503,6 +503,13 @@ a {
     }
 }
 
+@media (hover: hover) {
+    a:hover {
+      background: rgba(194, 194, 197, 0.712);
+      padding: 19px;
+    }
+  }
+
 #contenedor-loader {
     width: 90%;
     max-width: 700px;
@@ -582,6 +589,7 @@ a {
         width: 100%;
         background-color: rgba(83, 14, 83, 0.486);
         display: none;
+        font-size: 24px;
     }
     .menu ul {
         display: flex;
@@ -606,10 +614,6 @@ a {
     }
 }
 
-.contenedor-home-login {
-    backdrop-filter: brightness(30%);
-    filter: brightness(60%);
-}
 
 .signup2 {
     width: 35%;
