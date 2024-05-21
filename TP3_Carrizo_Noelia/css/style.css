@@ -550,6 +550,10 @@ a {
     border-bottom: 1px solid #989c9e;
 }
 
+.registro-contenedor {
+    margin-bottom: 5em;
+}
+
 /**************************************Mobile*****************************************/
 
 /** hace responsivo el diseño */
@@ -610,7 +614,7 @@ a {
 .signup2 {
     width: 35%;
     margin: auto;
-    margin-top: 40px;
+    margin-top: 80px;
     border-radius: 5px;
     transition: transform, box-shadow, 1s;
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 1), 2px 2px 18px 4px rgba(0, 0, 0, 1), -2px -2px 10px 4px rgba(0, 0, 0, 1);
@@ -776,4 +780,38 @@ hr {
     transform-style: preserve-3d;
 }
 
+.promocionar {
+    background: linear-gradient(to top left, #3a6186, #89253e);
+    transform-style: preserve-3d;
+    height: 50px;
+    width: 100%;
+}
 
+.promocionar p {
+    color: #DDD7DD;
+    padding: 12px;
+    font-family: cursive;
+    font-size: 1.2rem;
+    font-family: fantasy;
+
+}
+
+/* cartel de promo de tarjetas para llamar la atencion */
+.promos {
+    animation-duration: 5s;
+    animation-name: promos;
+    animation-iteration-count: infinite; /* veces que se repite */
+    animation-direction: alternate; /* moviendo hacia adelante y atras */
+  }
+
+  @keyframes promos {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
