@@ -44,14 +44,9 @@ a {
     width: 20px;
     height: 20px;
 }
+
 /***********************************Menu**************************/
-.search-icono{
-    position: absolute;
-    color: #000000; 
-    z-index: 2;
-    left: 10px;
-    top: 11px;
-}
+
 .menu {
     width: 100%;
     height: 98px;
@@ -71,10 +66,6 @@ a {
     padding: 10px;
     margin-top: auto;
     margin: auto;
-}
-.menu li:nth-child(5){
-    border: none;
-
 }
 
 .menu li a {
@@ -503,6 +494,7 @@ a {
     }
 }
 
+/* para darle estilo al menu cuando pasamos el mouse por arriba*/
 @media (hover: hover) {
     a:hover {
       background: rgba(194, 194, 197, 0.712);
@@ -818,4 +810,25 @@ hr {
       margin-left: 0%;
       width: 100%;
     }
+  }
+
+  /* para el fondo de la pagina */
+  .multi_bg_example {
+    width: 100%;
+    height: 1500px;
+    background-image: url(../img/bubbles.png), url(../img/bubbles.png), linear-gradient(to right, rgb(255, 189, 189), rgba(255, 255, 255, 0));
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position:
+      bottom right,
+      left,
+      right;
+    background:
+      -moz-linear-gradient(
+        to right,
+        rgba(30, 75, 115, 1),
+        rgba(255, 255, 255, 0)
+      ),
+      -webkit-gradient(to right, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0)),
+      -ms-linear-gradient(to right, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0)),
+      linear-gradient(to right, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0));
   }
