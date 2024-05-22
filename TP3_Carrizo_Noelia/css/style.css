@@ -159,9 +159,9 @@ a {
     align-items: center;
     margin-top: 20px;
     margin-bottom: 20px;
-    padding: 5px;
-    width: 90px;
-    height: 30px;
+    padding: 9px;
+    width: 95px;
+    height: 45px;
     border: 0;
     border-radius: 5px;
     background-color: #582A72;
@@ -334,9 +334,9 @@ a {
 
 
 .signup {
-    width: 25%;
+    width: 35%;
     margin: auto;
-    margin-top: 40px;
+    margin-top: 20px;
     transform: rotateX(70deg) skew(30deg);
     border-radius: 5px;
     transition: transform, box-shadow, 1s;
@@ -352,35 +352,6 @@ a {
     padding: 8px;
 }
 
-.boton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 70%;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    width: 95px;
-    height: 30px;
-    border: 0;
-    border-radius: 5px;
-    padding: 5px;
-}
-
-.contenedorOpcLogin {
-    display: flex;
-    grid-row: 4;
-    margin-top: 15px;
-}
-
-.checkRecordarme {
-    margin-right: 10px;
-}
-
-.check {
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
 .signup:hover {
     transform: rotateX(0deg) skew(0deg);
     box-shadow: none;
@@ -391,15 +362,7 @@ a {
     text-align: center;
 }
 
-.signup h2 {
-    border: none;
-    border-radius: 0 0 5px 5px;
-    margin: 0;
-    padding: 5px 0;
-    text-align: center;
-    color: #fff;
-    font-size: 28px;
-}
+
 
 .inputReg  {
     background-color: white;
@@ -411,7 +374,8 @@ a {
     margin-bottom: 12px;
 }
 
-.btn-group-reserva{
+/* el radio button */
+.btn-group-reserva {
     margin: 12px;
 }
 
@@ -433,8 +397,15 @@ fieldset {
 }
 
 .form-reserva h2 {
-    font-size: 26px;
+    border: none;
+    border-radius: 0 0 5px 5px;
+    margin: 0;
+    padding: 5px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 38px;
 }
+
 
 /****************************   ANIMACION LOADING   ******************************/
 
