@@ -1,70 +1,50 @@
-// method que se ejecuta al activarse el click del menu
-function validarForm(event) {
+// Variables
+const formulario = document.querySelector('#formulario');
+const nombre = document.querySelector('#nombre');
+const cant = document.querySelector('#cant');
+const telefono = document.querySelector('#telefono');
+const email = document.querySelector('#email');
+const errores = document.querySelector('#errores');
+let mensajesErrores = [];
 
-	event.preventDefault();
+// Funciones
+function validar (evento) {
+    // Evitar que se envie el formulario
+    evento.preventDefault();
 
-    // tomo los campos ingresados en el formulario
-    valor = document.getElementById("campo").value;
-    if( valor == null || valor.length == 0 || /^\s+$/.test(valor) ) { 
-        return false;
+    // Vacia los mensajesErrores antes de rellenarlo nuevamente
+    mensajesErrores = [];
+
+    // VALIDACIONES
+
+    // Nombre carácteres válidos
+
+    if (!/^[a-zA-Z0-9]*$/.exec(nombre.value.trim())) {
+        mensajesErrores = mensajesErrores.concat('Nombre no tiene carácteres válidos');
     }
 
-    // valor para validar fecha
-    fechaDesde = document.getElementById("fechaDesde").value;
+    // Telefono debe ser números
 
-    if ( !(/^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(0[1-9]|1[1-9]|2[1-9])$/.test(fechaDesde))){  
-        return false;
+    if (isNaN(telefono.value.trim())) {
+        mensajesErrores = mensajesErrores.concat('Telefono debe ser número');
     }
 
-    // Para validar un checkbox, puede añadirse este código:
 
-    tipo = document.getElementById("tipo");
-    if ( !(tipo.checked ))  
-        return false;
+    // ENVIAR O MOSTRAR MENSAJES
+    if (mensajesErrores.length === 0) {
+        // Enviamos el formulario si no hay errores
+        formulario.reset();
+        alert ("El formulario valido correctamente");
+    } else {
+        // Muestro los errores
+        errores.textContent = '';
+        mensajesErrores.forEach(function (mensaje) {
+            const miLi = document.createElement('li');
+            miLi.textContent = mensaje;
+            errores.appendChild(miLi);
+        });
+    }
 }
 
-
-const btnEnviar = document.getElementById('botonRegistro');
-
-// event para que el formulario se valide
-const validación = (e) => {
-
-  e.preventDefault(); // prevengo que el formulario se envie
-  
-  // TOMO LOS DATOS INGRESADOS EN EL FORM
-  const nombre = document.getElementById('nombre');
-  const email = document.getElementById('email');
-  const tipo = document.getElementById("tipo");
-
-  if (nombre.value === "") {
-    alert("Por favor, escribe su nombre.");
-    nombre.focus();
-    return false;
-  }
-    
-  if (email.value === "") {
-    alert("Por favor, escribe tu correo electrónico");
-    email.focus();
-    return false;
-  }
-
-  if (!validarEmail(email.value)) {
-    alert("Por favor, escribe un correo electrónico válido");
-    emailAddress.focus();
-    return false;
-  }
-
-  // Para validar un checkbox, puede añadirse este código:
-  if ( !(tipo.checked ))  
-      return false;
-  
-  return true; //Se pueden enviar los datos del formulario al servidor
-}
-
-
-function validarEmail(email) {
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-}
-
-btnEnviar.addEventListener('click', validate);
+// Eventos
+formulario.addEventListener('submit', validar);
