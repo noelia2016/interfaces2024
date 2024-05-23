@@ -18,7 +18,7 @@ a {
 
 .menu {
     width: 100%;
-    height: 110px;
+    height: 115px;
     position: static;
     align-items: center;
 }
@@ -43,11 +43,14 @@ a {
     font-size: 24px;
 }
 
+/* el dis ul */
 .opcionesMenu {
     display: flex;
     list-style: none;
     justify-content: center;
     margin-left: 20%;
+    margin-top: 3%;
+    margin-bottom: 3px;
 }
 
 .icon-menu {
@@ -62,11 +65,6 @@ a {
     align-items: center;
 }
 
-.iconUser {
-    display: flex;
-    color: white;
-    font-size: 30px;
-}
 
 .iconos {
     margin-left: 2%;
@@ -77,80 +75,13 @@ a {
 .logo {
     padding: auto;
     display: flex;
-    height: 90px;
-    margin: 8px;
+    height: 80px;
+    margin: 12px;
 }
 
 .img-logo {
-    height: 90px;
-}
-
-.dropdown-log-cont {
-    display: none;
-    position: absolute;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    padding: 0px;
-    z-index: 1;
-    left: -100px;
-    top: 31px;
-}
-
-.dropdown-log-cont a p {
-    border-bottom: 1px solid rgb(173, 172, 172);
-    padding: 15px;
-    color: rgba(83, 14, 83, 1);
-}
-
-.dropdown-log {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-log:hover .dropdown-log-cont {
-    display: block;
-}
-
-.dropdown-login-header {
-    height: 37px;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    padding: 0px;
-    z-index: 1;
-}
-
-.dropdown-header {
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.dropdown-header p:hover,
-.dropdown-header i:hover {
-    color: #FFC700;
-}
-
-.dropdown-header a {
-    color: white;
-}
-
-.dropdown-body-cat,
-.dropdown-body-jue {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    align-items: center;
+    height: 80px;
+    margin-top: 12px;
 }
 
 .botonRegistro {
@@ -230,109 +161,6 @@ a {
 
 /***********************************HOME**************************/
 
-.contenedorPrincipal:hover .juegoPrincipal {
-    filter: brightness(30%);
-}
-
-.contenedorPrincipal:hover .overlayPrincipal {
-    display: block;
-}
-
-.overlayPrincipal {
-    display: none;
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-}
-
-.botonPrincipal {
-    margin-top: 20px;
-}
-
-.tituloCat {
-    display: flex;
-    justify-content: center;
-    border-bottom: 2px solid rgb(102, 102, 102);
-    margin: 10px 40px 10px 40px;
-    padding: 10px;
-}
-
-
-.title {
-    position: absolute;
-    top: 80%;
-    width: 100%;
-    height: 33px;
-    justify-content: center;
-    background-color: #131313c4;
-    border-radius: 0px 0px 20px 20px;
-    color: #fff;
-    font-weight: lighter;
-    padding-top: 10px;
-}
-
-
-
-/***********************************Seccion Categorias***********************************/
-
-.seccion {
-    display: flex;
-    justify-content: center;
-    margin: 30px;
-}
-
-.headerSeccion {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: 100px;
-    align-items: center;
-    padding: 5px 40px 5px 40px;
-    border-radius: 30px;
-}
-
-.ordenar {
-    display: flex;
-}
-
-
-.subMenuCategorias {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    grid-template-rows: 50px;
-    margin: 30px;
-    margin-bottom: 50px;
-}
-
-.categoria-sm {
-    display: flex;
-    border-radius: 5px;
-    box-shadow: 1px 3px 3px rgba(59, 59, 59, 0.692);
-    align-items: center;
-    padding-left: 10px;
-}
-
-.img-categoria-sm {
-    width: 30px;
-    height: 30px;
-    padding: 10px;
-}
-
-.svg-categoria-sm {
-    width: 30px;
-    height: 30px;
-}
-
-.titulo-categoria-sm {
-    align-items: center;
-}
-
-/*************************************Consulta*****************************************/
-
-
 .signup {
     width: 35%;
     margin: auto;
@@ -346,11 +174,6 @@ a {
     margin-bottom: 40px;
 }
 
-.label {
-    display: flex;
-    justify-content: start;
-    padding: 8px;
-}
 
 .signup:hover {
     transform: rotateX(0deg) skew(0deg);
@@ -361,8 +184,6 @@ a {
     border-radius: 0 0 5px 5px;
     text-align: center;
 }
-
-
 
 .inputReg  {
     background-color: white;
@@ -383,6 +204,12 @@ fieldset {
     margin-bottom: 12px;
 }
 
+.label {
+    display: flex;
+    justify-content: start;
+    padding: 8px;
+}
+
 .labelInput {
     display: grid;
     justify-content: start;
@@ -396,13 +223,13 @@ fieldset {
     justify-content: center;
 }
 
+/* estilo para el h2 del formulario */
 .form-reserva h2 {
     border: none;
     border-radius: 0 0 5px 5px;
     margin: 0;
     padding: 5px 0;
     text-align: center;
-    color: #fff;
     font-size: 38px;
 }
 
@@ -415,15 +242,42 @@ fieldset {
     border: 4px solid #fcd779;
     border-top: 4px solid rgba(55, 0, 55, 1);
     border-radius: 50%;
-}
-
-#loader {
     transition-property: transform;
     animation-name: rotate;
     animation-duration: 1.3s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
+
+  /* una animacion de carga */
+  #contenedor-loader {
+    width: 90%;
+    max-width: 700px;
+    margin: 1em auto;
+    position: relative;
+    justify-items: center;
+}
+
+
+
+/* spinner positioning */
+
+#loader {
+    position: absolute;
+    top: 80px;
+    margin-left: -24px;
+    left: 50%;
+}
+
+#texto-loader {
+    position: absolute;
+    top: 120px;
+    width: 45%;
+    padding: 5%;
+    text-align: center;
+    left: 25%;
+}
+
 
 @keyframes rotate {
     from {
@@ -442,43 +296,11 @@ fieldset {
     }
   }
 
-  /* una animacion de carga */
-#contenedor-loader {
-    width: 90%;
-    max-width: 700px;
-    margin: 1em auto;
-    position: relative;
-    justify-items: center;
-}
-
-
-
-/* spinner positioning */
-
-#loader {
-    position: absolute;
-    top: 80px;
-    margin-left: -24px;
-}
-
-#loader {
-    left: 50%;
-}
-
-#texto-loader {
-    position: absolute;
-    top: 120px;
-    width: 45%;
-    padding: 5%;
-    text-align: center;
-    left: 25%;
-}
-
 
 .titulo-icono {
     display: flex;
-    width: 24px;
-    height: 24px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     justify-content: center;
     text-align: center;
@@ -486,71 +308,11 @@ fieldset {
     margin-right: 8px;
 }
 
-.sub {
-    /* margin-right: 20px; */
-    border-bottom: 1px solid #989c9e;
-}
-
 .registro-contenedor {
     margin-bottom: 5em;
 }
 
-/**************************************Mobile*****************************************/
-
-/** hace responsivo el diseño */
-@media only screen and (max-width: 640px) {
-    
-    .icon-menu {
-        display: block;
-    }
-    
-    .menuResponsive {
-        font-size: 40px;
-    }
-    .menu {
-        position: fixed;
-        top: 0;
-        margin-top: 0;
-    }
-    .headerSeccion {
-        margin-top: 100px;
-    }
-    .menuMobile {
-        display: grid;
-        grid-template-columns: 4fr;
-        position: fixed;
-        top: 50px;
-        width: 100%;
-        background-color: rgba(83, 14, 83, 0.486);
-        display: none;
-        font-size: 24px;
-    }
-    .menu ul {
-        display: flex;
-    }
-    .menu li {
-        border-right: none;
-        justify-content: center;
-    }
-
-    .opcionesMenu {
-        display: grid;
-        grid-template-columns: 1fr;
-        margin-left: 0px;
-    }
-
-    .active {
-        display: grid;
-        grid-template-columns: 4fr;
-        top: 95px;
-        width: 100%;
-        height: auto;
-        background-color: rgba(83, 14, 83, 0.877);
-        left: 0px;
-    }
-}
-
-
+/* el conterdor del formulario */
 .signup2 {
     width: 35%;
     margin: auto;
@@ -564,7 +326,7 @@ fieldset {
     z-index: 1;
     position: fixed; 
     animation-name: registro; /* como se llama la animacion para poder invocarla */
-    animation-duration: 3s; /* lo que dura*/
+    animation-duration: 3s; /* lo que dura */
     color: rgba(83, 14, 83, 1);
     animation-timing-function: linear;
 }
@@ -640,84 +402,10 @@ textarea {
     100% {transform:scale3d(1,1,1)}
 }
 
-/******************************* LOGIN - REGISTRO  ************************************/
-
-
-/*CARD*/
-
-.cards-wrapper {
-    margin-top: 50px;
-}
-
-.card-container {
-    perspective: 1200px;
-}
-
-.card {
-    margin: 0 auto;
-    height: 500px;
-    width: 500px;
-    max-width: 80%;
-    position: relative;
-    border-radius: 25px;
-    transition: all 1s ease;
-    transform-style: preserve-3d;
-    box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.2)
-}
 
 .rotated {
     transform: rotateY(-180deg);
     transition-duration: 3s;
-}
-
-.card-contents {
-    width: 100%;
-    height: 100%;
-    border-radius: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    backface-visibility: hidden;
-}
-
-.cards-wrapper h2,
-.cards-wrapper p {
-    color: #FFFFFF;
-    font-family: Arial, sans-serif;
-    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
-    margin: 0 auto;
-}
-
-.cards-wrapper h2 {
-    font-size: 3em;
-    margin: 0 auto;
-}
-
-hr {
-    width: 50%;
-    margin: 20px auto;
-}
-
-.card-depth {
-    transform: translateZ(100px) scale(0.98);
-    perspective: inherit;
-}
-
-.card-front {
-    background: linear-gradient(to top left, #3a6186, #89253e);
-    transform-style: preserve-3d;
-}
-
-.card-back {
-    transform: rotateY(180deg);
-    transition-duration: 3s;
-    background: linear-gradient(to top left, #ffa17f, #00223e);
-    transform-style: preserve-3d;
 }
 
 .promocionar {
@@ -776,3 +464,88 @@ hr {
       -ms-linear-gradient(to right, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0)),
       linear-gradient(to right, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0));
   }
+
+/**************************************Mobile*****************************************/
+
+/** hace responsivo el diseño */
+@media only screen and (max-width: 640px) {
+    
+    .icon-menu {
+        display: block;
+    }
+
+    .menu {
+        position: fixed;
+        top: 0;
+        margin-top: 0;
+    }
+
+    .menuMobile {
+        display: grid;
+        grid-template-columns: 4fr;
+        position: fixed;
+        top: 50px;
+        width: 100%;
+        background-color: rgba(83, 14, 83, 0.486);
+        display: none;
+        
+    }
+
+    .menu ul {
+        display: flex;
+    }
+    
+    .menu li {
+        border-right: none;
+        justify-content: center;
+    }
+
+    .opcionesMenu {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-left: 0px;
+    }
+
+    .opcionesMenu a {
+        font-size: 12px;
+    }
+
+    .active {
+        display: grid;
+        grid-template-columns: 1fr;
+        top: 95px;
+        width: 100%;
+        height: auto;
+        background-color: rgba(83, 14, 83, 0.877);
+        left: 0px;
+    }
+
+    .signup2 {
+        margin-top: 185px;
+        width: 380px;
+    }
+
+    .signup2 h2 {
+        font-size: 19px;
+    }
+
+    .signup2 .inputReg  {
+        background-color: white;
+        width: 80%;
+        height: 30px;
+        border-radius: 10px;
+        justify-content: start;
+        padding-inline: 8px;
+        margin-bottom: 12px;
+    }
+
+    textarea {
+        width: 80%;
+    }
+
+    .promocionar:nth-child(1) {
+        display: none;
+
+    }
+
+}
