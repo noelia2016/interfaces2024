@@ -256,7 +256,7 @@ fieldset {
     margin: 1em auto;
     position: relative;
     justify-items: center;
-}
+  }
 
 
 
@@ -486,7 +486,6 @@ textarea {
         position: fixed;
         top: 50px;
         width: 100%;
-        background-color: rgba(83, 14, 83, 0.486);
         display: none;
         
     }
@@ -506,13 +505,13 @@ textarea {
         margin-left: 0px;
     }
 
-    .opcionesMenu a {
+    .menuMobile .opcionesMenu a {
         font-size: 12px;
     }
 
     .active {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 4fr;
         top: 95px;
         width: 100%;
         height: auto;
@@ -521,7 +520,7 @@ textarea {
     }
 
     .signup2 {
-        margin-top: 185px;
+        margin-top: 335px;
         width: 380px;
     }
 
@@ -547,5 +546,7 @@ textarea {
         display: none;
 
     }
+
+
 
 }
