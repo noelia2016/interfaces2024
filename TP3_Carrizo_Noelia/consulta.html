@@ -38,37 +38,36 @@
             <p class="promos"><b>Increibles promos!!! Con todas las tarjetas de credito. No te lo podes perder escribinos.</b></p>
         </div>   
         <div class="signup2">  
-            <form class="form-reserva" action="" method="POST">
+            <form class="form-reserva" id="formulario" action="">
                 <h2>Dejanos tu Consulta</h2>
                 <div class="contenedorReserva">
                     <div class="labelInput">
                         <fieldset>
                             <legend class="color-blanco">Consulta disponibilidad de:</legend>
                             <div class="btn-group-reserva" role="group" aria-label="Basic radio toggle button group">
-                                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" checked="">
+                                <input type="radio" class="btn-check" name="btnradio" id="tipo" checked="">
                                 <label class="color-blanco" for="btnradio1">Habitacion</label>
-                                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" checked="">
+                                <input type="radio" class="btn-check" name="btnradio" id="tipo" checked="">
                                 <label class="color-blanco" for="btnradio2">Restaurant</label>
                             </div>
                         </fieldset>
-
                         <label class="color-blanco label">Nombre y apellido:</label>
-                        <input type="text" class="inputReg" required>
+                        <input type="text" class="inputReg" id="nombre" required>
 
                         <label class="color-blanco label">Telefono:</label>
-                        <input type="text" class="inputReg" required>
+                        <input type="text" class="inputReg" id="telefono" required>
 
                         <label class="color-blanco label">Email:</label>
-                        <input type="email" class="inputReg" placeholder="name@example.com" required>
+                        <input type="email" class="inputReg" id="email" placeholder="name@example.com" required>
 
                         <label class="color-blanco label">Fecha disponibilidad desde:</label>
-                        <input type="date" class="inputReg" required>
+                        <input type="date" class="inputReg" id="fechaDesde">
 
                         <label class="color-blanco label">Hasta:</label>
-                        <input type="date" class="inputReg" required>
+                        <input type="date" class="inputReg" id="fechaHasta">
 
                         <label class="color-blanco label">Cantidad de personas:</label>
-                        <input type="number" class="inputReg" required>
+                        <input type="number" class="inputReg" id="cant" required>
                         <div>
                             <label for="exampleTextarea" class="color-blanco label">Observaciones:</label>
                             <textarea class="form-control" id="observaciones" rows="5" cols="30" maxlength="500"></textarea>
@@ -82,7 +81,7 @@
     <br>
 </main>
 </div>
-<script src="js/animacion-loader.js"></script>
+<script src="js/validacion-form.js"></script>
 <script src="js/tools.js"></script>
 
 </html>
