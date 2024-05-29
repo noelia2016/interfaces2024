@@ -1,0 +1,163 @@
+body {
+    margin: 0;
+    max-height: 100%;
+}
+
+#contenedor,
+#cielo,
+#piso {
+    width: 100%;
+}
+
+#contenedor {
+    height: 100%;
+    overflow-y: hidden; 
+    overflow-x: hidden;
+}
+
+body {
+    overflow-y: hidden; 
+    overflow-x: hidden;
+}
+
+#cielo {
+    height: 80%;
+    background: url("images/BG.png") repeat-x;
+    background-size: 1280px 100%;
+    position: absolute;
+    animation: sky 25s linear infinite;
+}
+
+@keyframes sky {
+    0% {
+        background-position: 1280px
+    }
+
+    100% {
+        background-position: 0
+    }
+}
+
+/*
+3
+#arboles {
+    width: 133px;
+    height: 65px;
+    z-index: 1;
+    position: absolute;
+    bottom: 38%;
+    left: 100px;
+    background: url("images/arbusto.png") repeat-x;
+    animation: arboles 2.5s forwards linear;
+}*/
+
+@keyframes arboles {
+    from {
+      left: 100%;
+    }
+    to {
+      left: -40%; /* distancia entre obstaculo */
+    }
+}
+
+#piso {
+    height: 20%;
+    background: url("images/floor.png") repeat-x;
+    background-size: 831px 100%;
+    animation: floor 8s linear infinite;
+    position: absolute;
+    bottom: 0px;
+    z-index: 0;
+}
+
+@keyframes floor {
+    0% {
+        background-position: 831px
+    }
+
+    100% {
+        background-position: 0
+    }
+}
+
+#personaje {
+    width: 96px;
+    height: 154px;
+    z-index: 1;
+    position: absolute;
+    bottom: 18%;
+    left: 100px;
+    background: url("images/personaje_8.png") repeat-x;
+}
+
+.correr {
+    /* va a correr mientras no aprete ninguna tecla de pausa o para saltar */ 
+    animation: correr .9s steps(8) infinite;
+}
+
+.saltar {
+    animation: saltar 800ms cubic-bezier(0,0,.5,1) forwards; 
+}
+
+.caer {
+    animation: caer 600ms cubic-bezier(0,0,.5,1) forwards;
+}
+
+/* al saltar */
+@keyframes saltar {
+    from {
+        bottom: 18%;
+    }
+    to {
+        bottom: 50%;
+    }
+   
+}
+
+/* cuando cae */
+@keyframes caer {
+    from {
+        bottom: 50%;
+    }
+    to {
+        bottom: 18%;
+    }
+}
+
+
+@keyframes correr {
+    0% {
+        background-position: 0
+    }
+
+    100% {
+        background-position: -1768px
+    }
+}
+
+/* esto serian los obstaculos que le aparecen al personaje */
+.enemigo {
+    position: absolute;
+    bottom: 20%; /* posicion en la que aparece a partir del suelo del juego */
+    width: 77px;
+    height: 77px;
+    /*background-color: rgb(216, 7, 7);*/
+    background: url("images/Crate.png") repeat-x;
+    /*background-size: 50px;*/
+    box-shadow: 36px;
+    animation: enemigo 2.5s forwards linear;
+}
+
+
+
+@keyframes enemigo {
+    from {
+      left: 100%;
+    }
+    to {
+      left: -40%; /* distancia entre obstaculo */
+    }
+}
+
+
+

@@ -1,0 +1,1 @@
+El formulario es para un hotel donde podes consultar disponibilidad para reservar una habitacion o tambien para consultar disponibilidad de mesa en el restaurante del hotel y poder deleitar de los exquisitos platos que realiza el chef Italiano.

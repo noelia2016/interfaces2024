@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Colisión de divs</title>
+    <style>
+        #div1 {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            position: absolute;
+            left: calc((50% - 100px));
+        }
+
+        #div2 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: calc((50% - 100px) + 120px);
+        }
+
+        #display {
+            position: absolute;
+            top: 60%;
+            left: calc(50% - 100px);
+            height: 35px;
+            width: 200px;
+            background-color: royalblue;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            font-family: sans-serif;
+            font-size: 1rem;
+            line-height: 35px;
+            text-transform: uppercase;
+        }
+
+        #aviso {
+            position: absolute;
+            top: 55%;
+            height: 35px;
+            width: 60%;
+            text-align: center;
+            font-family: sans-serif;
+            font-size: 1rem;
+            line-height: 35px;
+            text-transform: uppercase;
+            left: 20%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="aviso">
+        Para mover el bloque naranja utilice las teclas A, S, W, D
+    </div>
+    <div id="display"></div>
+    <script>
+        // Obtener los elementos div
+        const div1 = document.getElementById('div1');
+        const div2 = document.getElementById('div2');
+
+        //Movimiento de div
+        document.addEventListener("keydown", function (event) {
+            const tecla = event.key.toLowerCase();
+            const rect1 = div1.getBoundingClientRect();
+            if (tecla === "a") {
+                div1.style.left = `${rect1.left - 5}px`;
+            }
+
+            if (tecla === "w") {
+                div1.style.top = `${rect1.top - 5}px`;
+            }
+
+            if (tecla === "d") {
+                div1.style.left = `${rect1.left + 5}px`;
+            }
+
+            if (tecla === "s") {
+                div1.style.top = `${rect1.top + 5}px`;
+            }
+        });
+
+        // Función para verificar colisión
+        function checkCollision() {
+            console.log('test');
+            const rect1 = div1.getBoundingClientRect();
+            const rect2 = div2.getBoundingClientRect();
+            document.getElementById('display').innerHTML = '';
+            // Verificar si hay colisión
+            if (!(rect1.right < rect2.left ||
+                rect1.left > rect2.right ||
+                rect1.bottom < rect2.top ||
+                rect1.top > rect2.bottom)) {
+                document.getElementById('display').innerHTML = '¡Colisión detectada!';
+                //console.log('¡Colisión detectada!');
+            }
+        }
+
+        setInterval(checkCollision, 50);
+        // Verificar colisión al mover el mouse
+        //document.addEventListener('mousemove', checkCollision);
+    </script>
+</body>
+
+</html>
