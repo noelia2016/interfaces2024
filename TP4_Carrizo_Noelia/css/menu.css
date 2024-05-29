@@ -1,0 +1,133 @@
+
+a {
+    text-decoration: none;
+}
+
+/***********************************Menu**************************/
+
+.menu {
+    width: 100%;
+    height: 115px;
+    position: static;
+    align-items: center;
+    margin: 0;
+}
+
+.menuMobile {
+    display: grid;
+    grid-template-columns: 7fr 4fr 4fr 1fr;
+    align-items: center;
+}
+
+.menu li {
+    list-style: none;
+    border-right: solid 2px white;
+    padding: 10px;
+    margin-top: auto;
+    margin: auto;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+/* el dis ul */
+.opcionesMenu {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    margin-left: 20%;
+    margin-top: 3%;
+    margin-bottom: 3px;
+}
+
+.icon-menu {
+    display: none;
+}
+
+
+.menu ul {
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    grid-row: 2fr;
+    align-items: center;
+}
+
+
+.iconos {
+    margin-left: 2%;
+    grid-column: 4;
+    grid-row: 1;
+}
+
+.logo {
+    padding: auto;
+    display: flex;
+    height: 80px;
+    margin: 12px;
+}
+
+.img-logo {
+    height: 80px;
+    margin-top: 12px;
+    border-radius: 24px;
+}
+
+.bg-violeta4 {
+    background-color: rgba(64, 0, 0);
+}
+
+/** hace responsivo el diseño */
+@media only screen and (max-width: 640px) {
+    
+    .icon-menu {
+        display: block;
+    }
+
+    .menu {
+        position: fixed;
+        top: 0;
+        margin-top: 0;
+    }
+
+    .menuMobile {
+        display: grid;
+        grid-template-columns: 4fr;
+        position: fixed;
+        top: 50px;
+        width: 100%;
+        display: none;
+        
+    }
+
+    .menu ul {
+        display: flex;
+    }
+    
+    .menu li {
+        border-right: none;
+        justify-content: center;
+    }
+
+    .opcionesMenu {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-left: 0px;
+    }
+
+    .menuMobile .opcionesMenu a {
+        font-size: 12px;
+    }
+
+    .active {
+        display: grid;
+        grid-template-columns: 4fr;
+        top: 95px;
+        width: 100%;
+        height: auto;
+        background-color: rgba(83, 14, 83, 0.877);
+        left: 0px;
+    }
+}

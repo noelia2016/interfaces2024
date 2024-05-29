@@ -22,7 +22,7 @@ body {
 
 #cielo {
     height: 80%;
-    background: url("images/BG.png") repeat-x;
+    background: url("../images/BG.png") repeat-x;
     background-size: 1280px 100%;
     position: absolute;
     animation: sky 25s linear infinite;
@@ -39,7 +39,6 @@ body {
 }
 
 /*
-3
 #arboles {
     width: 133px;
     height: 65px;
@@ -62,7 +61,7 @@ body {
 
 #piso {
     height: 20%;
-    background: url("images/floor.png") repeat-x;
+    background: url("../images/floor.png") repeat-x;
     background-size: 831px 100%;
     animation: floor 8s linear infinite;
     position: absolute;
@@ -87,7 +86,7 @@ body {
     position: absolute;
     bottom: 18%;
     left: 100px;
-    background: url("images/personaje_8.png") repeat-x;
+    background: url("../images/personaje_8.png") repeat-x;
 }
 
 .correr {
@@ -142,7 +141,7 @@ body {
     width: 77px;
     height: 77px;
     /*background-color: rgb(216, 7, 7);*/
-    background: url("images/Crate.png") repeat-x;
+    background: url("../images/Crate.png") repeat-x;
     /*background-size: 50px;*/
     box-shadow: 36px;
     animation: enemigo 2.5s forwards linear;
@@ -158,6 +157,7 @@ body {
       left: -40%; /* distancia entre obstaculo */
     }
 }
+
 
 
 

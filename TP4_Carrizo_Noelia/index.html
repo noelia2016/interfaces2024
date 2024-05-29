@@ -5,13 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jugando 2024</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
 </head>
 <body>
-    <nav>
-        
+    <nav class="menu bg-violeta4">
+        <ul class="letra-verdana1 color-blanco">
+            <div class="logo">
+                <a href="index.html"> <img class="jello-vertical img-logo" src="images/gaming-video-logo.jpg" alt="Logo"></a>
+            </div>
+            <div class="menuMobile">
+                <div class="opcionesMenu">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="#">COMO JUGAR</a></li>
+                    <li><a href="#">MAS JUEGOS</a></li>
+                    <li><a href="#">CONOCENOS</a></li>
+                </div>
+            </div>
+            <button class="icon-menu"><i class="menuResponsive color-blanco fa-solid fa-bars"></i></button>
+        </ul>
     </nav>
     <div id="contenedor">
         <div id="cielo"></div>
+        <div id="arboles"></div>
         <div id="personaje" class="correr"></div>
         <div id="piso"></div>
     </div>
@@ -20,5 +35,6 @@
     <script src="js/Runner.js"></script>
     <script src="js/Enemigo.js"></script>
     <script src="js/Tool.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
