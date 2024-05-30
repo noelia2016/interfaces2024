@@ -1,0 +1,13 @@
+Como juega?
+El juego consiste en recolectar monedas y bonus sumando la mayor cantidad de puntos posible mientras duren los 4 minutos que dura el mismo y no se quede sin vidas antes.
+
+Pierde vidas si se choca contra un enemigo
+Suma punto con las monedas y si agarra los bonus (que pueden ser los fueguitos o el corazon no lo decidi aun)
+Suma vidas si agarra el circulo
+
+
+FALTA TERMINAR 
+
+el menu con las instrucciones de juego y una pantalla principal en la que se muestre para dirigirse al juego
+acomodar el personaje 
+hacer lo de las colisiones con los elementos para ver si pierde vidas o suma puntos

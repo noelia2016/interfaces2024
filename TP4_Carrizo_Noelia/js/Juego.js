@@ -15,10 +15,10 @@ let cantColisiones = 0;
 
 //muestro en pantalla la vida y los putnos
 document.getElementById('puntos').textContent = "PUNTOS: " + puntos;
-document.getElementById('vidas').textContent = "VIDAS: " + vida;
+document.getElementById('vidas').textContent = "VIDAS: " + vidas;
 
 /** iniciar juego luego de presionar el boton jugar */
-function inicarJuego(){
+function iniciarJuego(){
     
 
 }
