@@ -6,6 +6,7 @@ class Runner extends Personaje {
     }
 
     status() {
+        // método devuelve un DOMRectobjeto que proporciona información sobre el tamaño de un elemento y su posición relativa a la ventana gráfica 
         this.personaje.getBoundingClientRect();
     }
 

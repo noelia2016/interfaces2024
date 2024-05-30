@@ -1,6 +1,8 @@
 body {
     margin: 0;
     max-height: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
 }
 
 #contenedor,
@@ -48,14 +50,31 @@ body {
     left: 100px;
     background: url("images/arbusto.png") repeat-x;
     animation: arboles 2.5s forwards linear;
-}*/
+}
 
 @keyframes arboles {
     from {
       left: 100%;
     }
     to {
-      left: -40%; /* distancia entre obstaculo */
+      left: -40%; /* distancia entre obstaculo 
+    }
+}*/
+
+#arboles {
+    height: 80%;
+    background: url("../img/arbusto.png") repeat-x;
+    background-size: 1000px 100%;
+    position: absolute;
+    animation: arboles 15s linear infinite;
+}
+
+@keyframes arboles {
+    0% {
+        background-position: 1000px
+    }
+    100% {
+        background-position: 0
     }
 }
 
