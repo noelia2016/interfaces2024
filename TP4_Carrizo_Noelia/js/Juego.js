@@ -124,6 +124,7 @@ function gameOver(){
     end = true; // finaliza el juego 
     clearInterval(nuevoEnemigo);
     clearInterval(nuevoBonus);
+
     setTimeout(function() {
 
         document.getElementById("contenedor").classList.add("menu");
@@ -211,18 +212,3 @@ function checkCollision(elementos){
         }
     }
 }
-
-/** tomo los eventos para comenzar a jugar y para ver las instruciones */
-document.getElementById("jugarBtn").addEventListener("click", function() {
-    startGame();
-});
-
-document.getElementById("instruccionesBtn").addEventListener("click", function() {
-    //btnSonido.play();
-    showInstructions();
-});
-
-document.getElementById("volverBtn").addEventListener("click", function() {
-    //btnSonido.play();
-    backToMenu();
-});
