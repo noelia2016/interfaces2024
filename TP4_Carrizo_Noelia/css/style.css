@@ -1,8 +1,9 @@
 body {
     margin: 0;
     max-height: 100%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;
+    overflow-y: hidden; 
+    overflow-x: hidden;
 }
 
 #contenedor,
@@ -17,11 +18,71 @@ body {
     overflow-x: hidden;
 }
 
-body {
-    overflow-y: hidden; 
-    overflow-x: hidden;
+/* estilo para el menu del juego y las instrucciones donde se muestra como se juega */
+#menu, #instrucciones {
+    background-image: linear-gradient(
+        to bottom,
+        rgb(255 255 0 / 50%),
+        rgb(0 0 255 / 50%)
+      ), url(../images/ef8af925cfbfed372b36a31a5930fdfe.jpg);
+    background-size: 80%;
+    width: 100%;
+    height: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: column;
+    padding: 0px 100px;
+    align-items: center;
 }
 
+/* para los botones del juego */
+button {
+    background-color: brown;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: larger;
+    border:none;
+    margin:20px;
+    height: 45px;
+    width: 165px;
+    box-shadow: 2px 2px 2px white;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+/* cuando pasa por arriba del boton */
+button:hover {
+    background-color: rgba(177, 57, 139, 0.686);
+}
+
+#portada {
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 58px;
+    margin-top: 50px;
+    color: rgb(212, 6, 75);
+    box-shadow: 2px 2px rgba(245, 244, 244, 0.973);
+}
+
+h1:hover {
+    box-shadow: 8px 4px 3px 2px rgba(238, 2, 61, 0.2);
+}
+
+#menu img {
+    height: 150px;
+    width: 150px;
+    border-radius: 25px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+#menu img:hover {
+    box-shadow: 8px 4px 3px 2px rgba(238, 2, 61, 0.2);
+}
+
+/* estilos del juego */
 #cielo {
     height: 80%;
     background: url("../images/BG.png") repeat-x;

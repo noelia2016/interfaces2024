@@ -21,3 +21,13 @@ setInterval(generarEnemigo, 3000);
 function generarEnemigo() {
     let enemigo = new Enemigo();
 }
+
+function showInstructions() {
+  document.getElementById("menu").style.display = "none";
+  document.getElementById("instrucciones").style.display = "flex";
+}
+
+function backToMenu() {
+  document.getElementById("instrucciones").style.display = "none";
+  document.getElementById("menu").style.display = "flex";
+}
