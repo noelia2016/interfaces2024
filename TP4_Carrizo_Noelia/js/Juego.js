@@ -9,22 +9,50 @@
 */
 let tiempo = 240;
 let puntos = 0;
-let vidas = 4;
+let vida = 4;
 let intervalo = 0;
 let cantColisiones = 0;
+let end= false; /** para finalizar el juego */
+let nuevoEnemigo;
+let nuevoBonus;
+let nuevoVidas;
+
+const personaje = document.getElementById("personaje");
+const enemigos = document.getElementsByClassName('enemigo');
+const bonus = document.getElementsByClassName('bonus');
+const vidas = document.getElementsByClassName('nuevaVida');
+// los botones de juego y demas
+const btns = document.getElementsByClassName('btn');
 
 //muestro en pantalla la vida y los putnos
 document.getElementById('puntos').textContent = "PUNTOS: " + puntos;
-document.getElementById('vidas').textContent = "VIDAS: " + vidas;
+document.getElementById('vidas').textContent = "VIDAS: " + vida;
+
+/** GENERACION DE OBJETOS DE BONUS ENEMIGOS Y VIDAS PARA PODER JUGAR  */
+/** genera los enemigos */
+function generarEnemigo() {
+    let enemigo = new Enemigo();
+}
+
+/** genera bonus */
+function generarBonus() {
+    let bonus = new Bonus();
+}
+
+/** genera vidas  */
+function generarVidas() {
+    let nuevaVida = new Vida();
+}
 
 
 // Función para actualizar el tiempo cada segundo
 function actualizarReloj() {
+
     // Verifica si el tiempo ha llegado a cero
     if (tiempo <= 0) {
         clearInterval(intervalo);
+        // si se sertina el tiempo finaliza el juego
         gameOver();
-
         return;
     }
 
@@ -63,21 +91,37 @@ function startGame(){
     /* Chequeo colision con enemigo */
     setInterval(function() { checkCollision(enemigos) }, 50);
 
+    /* Chequeo colision con bonus */
+    setInterval(function() { checkCollision(bonus) }, 50);
+
+    /* Chequeo colision con vida */
+    setInterval(function() { checkCollision(vidas) }, 50);
+
+    /* cada 5 segundos genera un bonus */
+    nuevoBonus = setInterval(generarBonus, 5000);
+
+    /* cada 7 segundos genera un bonus */
+    nuevaVida = setInterval(generarVidas, 7000);
+
+    // Inicia el contador del juego
+    intervalo = setInterval(actualizarReloj, 1000);
 
 }
 
 
 /** chequeo el fin del juego */
 function gameOver(){
+
     // va a perder si termina el tiempo o si se quedo sin vidas
     let fin = document.getElementById("fin");
     fin.currentTime = 0;
     fin.play();
     fin.volume = 0.2;
 
-    personaje.style.backgroundImage = "url(estilo/img/pjfin.png)";
+    // cuando muere el personaje
+    personaje.style.backgroundImage = "url(../images/personaje/personaje_mueree.png)";
     personaje.style.transform = `rotate(180deg)`;
-    end = true;
+    end = true; // finaliza el juego 
     clearInterval(nuevoEnemigo);
     clearInterval(nuevoBonus);
     setTimeout(function() {
@@ -100,10 +144,16 @@ function gameOver(){
 
 }
 
-/** chequeo si se choca contra algun enemigo, puntos o bonus de sumar vidas */
-function chequekColision(){
+//Vuelve a la imagen original
+function volverAlPersonaje() {
+    personaje.style.backgroundImage = "url(../images/personaje/pajaro.png)";
+}
 
-    if (primeraColision >= 3) {
+
+/** chequeo si se choca contra algun enemigo, puntos o bonus de sumar vidas */
+function checkCollision(elementos){
+
+    if (cantColisiones >= 3) {
         return; // Salir de la función si ya se ha producido una colisión
     }
     for (let i = 0; i < elementos.length; i++) {
@@ -112,37 +162,37 @@ function chequekColision(){
         const pj = personaje.getBoundingClientRect();
         const elem = elemento.getBoundingClientRect();
 
-
         // Verificar si hay colisión
         if (!(pj.right < elem.left ||
                 pj.left > elem.right ||
                 pj.bottom < elem.top ||
                 pj.top > elem.bottom)) {
+
             if (!elemento.classList.contains('golpeado')) {
-                //choque con enemigo
+                //cuando choca contra enemigo
                 if (elemento.classList.contains('enemigo')) {
                     //cambio la imagen para hacer la "animación"
-                    personaje.style.backgroundImage = "url(estilo/img/pjenemigo.png)";
-                    setTimeout(cambiarImagenDeFondo, 600);
+                    personaje.style.backgroundImage = "url(../images/personaje/personaje-colision.png)";
+                    setTimeout(volverAlPersonaje, 600);
                     vida--;
                     document.getElementById('vidas').textContent = "Vidas: " + vida;
                     elemento.classList.add('golpeado'); // Marcar el enemigo como golpeado
                 }
-                //choque con arcoiris (bonus)
+                //choque con bonus
                 if (elemento.classList.contains('bonus')) {
-                    //cambio la imagen para hacer la "animación"
-                    personaje.style.backgroundImage = "url(estilo/img/pjbonus.png)";
-                    setTimeout(cambiarImagenDeFondo, 600);
+                    // cambio la imagen para hacer la "animación"
+                    personaje.style.backgroundImage = "url(../images/personaje/pjbonus.png)";
+                    setTimeout(volverAlPersonaje, 600);
                     puntos += 10;
                     tiempo += 10;
                     document.getElementById('puntos').textContent = "Puntos: " + puntos;
                     elemento.remove(); // Eliminar el bonus del DOM
                 }
-                //choque con lata de atun (vida)
+                // choque con un corazon (vida)
                 if (elemento.classList.contains('nuevaVida')) {
                     //cambio la imagen para hacer la "animación"
-                    personaje.style.backgroundImage = "url(estilo/img/pjvida.png)";
-                    setTimeout(cambiarImagenDeFondo, 600);
+                    personaje.style.backgroundImage = "url(../images/personaje/pj-vida.png)";
+                    setTimeout(volverAlPersonaje, 600);
                     vida++;
                     document.getElementById('vidas').textContent = "Vidas: " + vida;
                     elemento.remove(); // Eliminar la vida del DOM

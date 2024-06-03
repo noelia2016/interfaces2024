@@ -106,15 +106,14 @@ h1:hover {
 #puntos {
     color: rgb(12, 11, 11);
     padding: 8px;
-    border-radius:30px;
 }
 
 /* el contador */
 .timeOut {
-    color: rgb(177, 6, 211);
+    color: rgb(54, 3, 65);
 }
 
-
+/*
 #arboles {
     height: 80%;
     background: url("../images/obstaculos/arbusto.png") repeat-x;
@@ -130,7 +129,7 @@ h1:hover {
     100% {
         background-position: 0
     }
-}
+}*/
 
 #piso {
     height: 20%;
@@ -208,15 +207,15 @@ h1:hover {
 }
 
 /* esto serian los obstaculos que le aparecen al personaje */
-/*.enemigo {
+.enemigo {
     position: absolute;
-    bottom: 20%; /* posicion en la que aparece a partir del suelo del juego /
+    bottom: 20%; /* posicion en la que aparece a partir del suelo del juego */
     width: 77px;
     height: 77px;
     background: url("../images/obstaculos/Crate.png") repeat-x;
-    /*background-size: 50px;/
+    /*background-size: 50px; */
     box-shadow: 36px;
-    animation: enemigo 2.5s forwards linear;
+    animation: enemigo 8.5s forwards linear;
 }
 
 @keyframes enemigo {
@@ -224,14 +223,14 @@ h1:hover {
       left: 100%;
     }
     to {
-      left: -40%; /* distancia entre obstaculo /
+      left: -40%; /* distancia entre obstaculo */
     }
-}*/
+}
 
 /* esto serian los obstaculos que le aparecen al personaje */
-.enemigo {
+/*.enemigo {
     position: absolute;
-    bottom: 23%; /* posicion en la que aparece a partir del suelo del juego */
+    bottom: 23%; /* posicion en la que aparece a partir del suelo del juego /
     width: 313px;
     height: 260px;
     background: url("../images/obstaculos/Tree.png");
@@ -245,9 +244,9 @@ h1:hover {
       left: 100%;
     }
     to {
-      left: -10%; /* distancia entre obstaculo */
+      left: -10%; /* distancia entre obstaculo /
     }
-}
+}*/
 
 /* para sumar vidas */
 .bonusVidas {
@@ -255,7 +254,7 @@ h1:hover {
     bottom: 60%;
     width: 110px;
     height: 70px;
-    background: url("../images/anillo-de-fuego.png");
+    background: url("../images/3440904-love-plus_107518.png");
     animation: bonusVidas 3s forwards linear;
 }
 
@@ -275,7 +274,7 @@ h1:hover {
     bottom: 60%;
     width: 140px;
     height: 90px;
-    background: url("../images/fuego.png");
+    background: url("../images/+vidas.png");
     transform: rotate(15deg);
     animation: bonusVidas 3s forwards linear;
 }
@@ -287,6 +286,11 @@ h1:hover {
     to {
         left: -15%;
     }
+}
+
+/* indica que el elemento fue golpeado o no con algun otro */
+.golpeado {
+    display: none;
 }
 
 
