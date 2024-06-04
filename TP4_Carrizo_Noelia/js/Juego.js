@@ -72,6 +72,72 @@ function actualizarReloj() {
 
 }
 
+//Vuelve a la imagen original
+function volverAlPersonaje() {
+    personaje.style.backgroundImage = "url(../images/personaje/pajaro.png)";
+}
+
+/** chequeo si se choca contra algun enemigo, puntos o bonus de sumar vidas */
+function checkCollision(elementos){
+
+    if (cantColisiones >= 3) {
+        return true; // Salir de la función si ya se ha producido una colisión
+    }
+
+    // recorre mientras continue el juego y tenga elementos
+    for (let i = 0; i < elementos.length; i++) {
+
+        const elemento = elementos[i];
+        const pj = personaje.getBoundingClientRect();
+        const elem = elemento.getBoundingClientRect();
+
+        // Verificar si hay colisión con el personaje
+        if (!(pj.right < elem.left || pj.left > elem.right || pj.bottom < elem.top || pj.top > elem.bottom)) {
+
+            if (!elemento.classList.contains('golpeado')) {
+                //cuando choca contra enemigo
+                if (elemento.classList.contains('enemigo')) {
+                    //cambio la imagen para hacer la "animación"
+                    personaje.style.backgroundImage = "url(../images/personaje/personaje-colision.png)";
+                    setTimeout(volverAlPersonaje, 600);
+                    vida--;
+                    document.getElementById('vidas').textContent = "Vidas: " + vida;
+                    elemento.classList.add('golpeado'); // Marcar el enemigo como golpeado
+                }
+                //choque con bonus
+                if (elemento.classList.contains('bonus')) {
+                    // cambio la imagen para hacer la "animación"
+                    personaje.style.backgroundImage = "url(../images/personaje/pj-bonus.png)";
+                    setTimeout(volverAlPersonaje, 600);
+                    puntos += 10;
+                    tiempo += 10;
+                    document.getElementById('puntos').textContent = "Puntos: " + puntos;
+                    elemento.remove(); // Eliminar el bonus del DOM
+                }
+                // choque con un corazon (vida)
+                if (elemento.classList.contains('nuevaVida')) {
+                    //cambio la imagen para hacer la "animación"
+                    personaje.style.backgroundImage = "url(../images/personaje/pj-vida.png)";
+                    setTimeout(volverAlPersonaje, 600);
+                    vida++;
+                    document.getElementById('vidas').textContent = "Vidas: " + vida;
+                    elemento.remove(); // Eliminar la vida del DOM
+                }
+
+            }
+            // Verificar si se quedó sin vidas
+            if (vida == 0) {
+                //"elimino" los intervalos para que deje de generar nuevos objetos
+                clearInterval(intervalo);
+                clearInterval(nuevaVida);
+                clearInterval(nuevoEnemigo);
+                //fin del juego
+                gameOver();
+            }
+        }
+    }
+}
+
 /** iniciar juego luego de presionar el boton jugar */
 function startGame(){
     
@@ -88,6 +154,7 @@ function startGame(){
 
     /* cada 3 segundos genera un enemigo */
     nuevoEnemigo = setInterval(generarEnemigo, 3000);
+
     /* Chequeo colision con enemigo */
     setInterval(function() { checkCollision(enemigos) }, 50);
 
@@ -145,70 +212,7 @@ function gameOver(){
 
 }
 
-//Vuelve a la imagen original
-function volverAlPersonaje() {
-    personaje.style.backgroundImage = "url(../images/personaje/pajaro.png)";
-}
 
 
-/** chequeo si se choca contra algun enemigo, puntos o bonus de sumar vidas */
-function checkCollision(elementos){
 
-    if (cantColisiones >= 3) {
-        return; // Salir de la función si ya se ha producido una colisión
-    }
-    for (let i = 0; i < elementos.length; i++) {
 
-        const elemento = elementos[i];
-        const pj = personaje.getBoundingClientRect();
-        const elem = elemento.getBoundingClientRect();
-
-        // Verificar si hay colisión
-        if (!(pj.right < elem.left ||
-                pj.left > elem.right ||
-                pj.bottom < elem.top ||
-                pj.top > elem.bottom)) {
-
-            if (!elemento.classList.contains('golpeado')) {
-                //cuando choca contra enemigo
-                if (elemento.classList.contains('enemigo')) {
-                    //cambio la imagen para hacer la "animación"
-                    personaje.style.backgroundImage = "url(../images/personaje/personaje-colision.png)";
-                    setTimeout(volverAlPersonaje, 600);
-                    vida--;
-                    document.getElementById('vidas').textContent = "Vidas: " + vida;
-                    elemento.classList.add('golpeado'); // Marcar el enemigo como golpeado
-                }
-                //choque con bonus
-                if (elemento.classList.contains('bonus')) {
-                    // cambio la imagen para hacer la "animación"
-                    personaje.style.backgroundImage = "url(../images/personaje/pjbonus.png)";
-                    setTimeout(volverAlPersonaje, 600);
-                    puntos += 10;
-                    tiempo += 10;
-                    document.getElementById('puntos').textContent = "Puntos: " + puntos;
-                    elemento.remove(); // Eliminar el bonus del DOM
-                }
-                // choque con un corazon (vida)
-                if (elemento.classList.contains('nuevaVida')) {
-                    //cambio la imagen para hacer la "animación"
-                    personaje.style.backgroundImage = "url(../images/personaje/pj-vida.png)";
-                    setTimeout(volverAlPersonaje, 600);
-                    vida++;
-                    document.getElementById('vidas').textContent = "Vidas: " + vida;
-                    elemento.remove(); // Eliminar la vida del DOM
-                }
-
-            }
-            // Verificar si se quedó sin vidas
-            if (vida <= 0) {
-                //"elimino" los intervalos para que deje de generar nuevos objetos
-                clearInterval(intervalo);
-                clearInterval(nuevaVida);
-                clearInterval(nuevoEnemigo);
-                //fin del juego
-                gameOver();
-            }
-        }
-    }
-}
