@@ -32,9 +32,39 @@ body {
     flex-wrap: wrap;
     align-content: center;
     flex-direction: column;
-    padding: 0px 100px;
+    padding: 0px 10px;
     align-items: center;
+    
 }
+
+ul{
+    list-style: none;
+}
+
+#instrucciones {
+    color: blanchedalmond;
+    font-size: 21px;
+}
+
+/* animacion para las instrucciones del juego */
+.slidein {
+    animation-duration: 5s;
+    animation-name: slidein;
+    animation-iteration-count: 3;
+    animation-direction: alternate;
+  }
+  
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
 
 /* para los botones del juego */
 button {
@@ -43,8 +73,8 @@ button {
     font-size: larger;
     border:none;
     margin:20px;
-    height: 45px;
-    width: 165px;
+    height: 55px;
+    width: 185px;
     box-shadow: 2px 2px 2px white;
     border-radius: 10px;
     color: white;
