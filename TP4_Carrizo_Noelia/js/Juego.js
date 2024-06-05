@@ -74,7 +74,7 @@ function actualizarReloj() {
 
 //Vuelve a la imagen original
 function volverAlPersonaje() {
-    personaje.style.backgroundImage = "url(../images/personaje/pajaro.png)";
+    personaje.style.backgroundImage = "url(images/personaje/pajaro.png)";
 }
 
 /** chequeo si se choca contra algun enemigo, puntos o bonus de sumar vidas */
@@ -98,7 +98,7 @@ function checkCollision(elementos){
                 //cuando choca contra enemigo
                 if (elemento.classList.contains('enemigo')) {
                     //cambio la imagen para hacer la "animación"
-                    personaje.style.backgroundImage = "url(../images/personaje/personaje-colision.png)";
+                    personaje.style.backgroundImage = "url(images/personaje/personaje-colision.png)";
                     setTimeout(volverAlPersonaje, 600);
                     vida--;
                     document.getElementById('vidas').textContent = "Vidas: " + vida;
@@ -107,7 +107,7 @@ function checkCollision(elementos){
                 //choque con bonus
                 if (elemento.classList.contains('bonus')) {
                     // cambio la imagen para hacer la "animación"
-                    personaje.style.backgroundImage = "url(../images/personaje/pj-bonus.png)";
+                    personaje.style.backgroundImage = "url(images/personaje/pj_bonus.png)";
                     setTimeout(volverAlPersonaje, 600);
                     puntos += 10;
                     tiempo += 10;
@@ -117,7 +117,7 @@ function checkCollision(elementos){
                 // choque con un corazon (vida)
                 if (elemento.classList.contains('nuevaVida')) {
                     //cambio la imagen para hacer la "animación"
-                    personaje.style.backgroundImage = "url(../images/personaje/pj-vida.png)";
+                    personaje.style.backgroundImage = "url(images/personaje/pj-vida.png)";
                     setTimeout(volverAlPersonaje, 600);
                     vida++;
                     document.getElementById('vidas').textContent = "Vidas: " + vida;
@@ -186,7 +186,7 @@ function gameOver(){
     fin.volume = 0.2;
 
     // cuando muere el personaje
-    personaje.style.backgroundImage = "url(../images/personaje/personaje_mueree.png)";
+    personaje.style.backgroundImage = "url(images/personaje/personaje_mueree.png)";
     personaje.style.transform = `rotate(180deg)`;
     end = true; // finaliza el juego 
     clearInterval(nuevoEnemigo);
@@ -196,12 +196,13 @@ function gameOver(){
 
         document.getElementById("contenedor").classList.add("menu");
         document.getElementById("contenedor").innerHTML = `
-      <div class="over">
-        <h1 class="over">GAME OVER</h1>
-        <h2>Puntos Obtenidos: ` + puntos + `</h2>
-        <button class="btn" id="volverAJugar">Volver a jugar</button>
-      </div>`;
+        <div class="over">
+            <h1 class="over">GAME OVER</h1>
+            <h2>Puntos Obtenidos: ` + puntos + `</h2>
+            <button class="btn" id="volverAJugar">Volver a jugar</button>
+        </div>`;
 
+        // saco el sonido
         sonidoFondo.remove();
 
         document.getElementById("volverAJugar").addEventListener("click", () => {

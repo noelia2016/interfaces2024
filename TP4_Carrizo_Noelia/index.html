@@ -26,6 +26,11 @@
         <button class="btn" id="volverBtn">Volver al menú</button>
     </div>
     
+    <!-- audios  -->
+    <audio id="sonidoFondo" src="audio/juego.mp3" loop></audio>
+    <audio id="saltoSonido" src="audio/salto.mp3"></audio>
+    <audio id="fin" src="audio/gameOver.mp3"></audio>
+    
     <!-- para cuando pierde el juego -->
     <div id="gameOver" style="display: none;">
         <h1> GAME OVER </h1>
@@ -44,8 +49,12 @@
         <div id="piso"></div>
     </div>
     
+    <!-- funcionalidad del juego y demas elementos -->
     <script src="js/Personaje.js"></script>
     <script src="js/Runner.js"></script>
+    <script src="js/Elemento.js"></script>
+    <script src="js/Bonus.js"></script>
+    <script src="js/Vida.js"></script>
     <script src="js/Enemigo.js"></script>
     <script src="js/Juego.js"></script>
     <script src="js/main.js"></script>

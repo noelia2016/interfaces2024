@@ -19,7 +19,7 @@ body {
 }
 
 /* estilo para el menu del juego y las instrucciones donde se muestra como se juega */
-#menu, #instrucciones {
+#menu, #gameOver, #instrucciones {
     background-image: linear-gradient(
         to bottom,
         rgb(255 255 0 / 50%),
@@ -284,7 +284,7 @@ h1:hover {
     bottom: 60%;
     width: 110px;
     height: 70px;
-    background: url("../images/3440904-love-plus_107518.png");
+    background: url("../images/love-plus.png");
     animation: bonusVidas 3s forwards linear;
 }
 
@@ -304,7 +304,7 @@ h1:hover {
     bottom: 60%;
     width: 140px;
     height: 90px;
-    background: url("../images/+vidas.png");
+    background: url("../images/anillo-de-fuego.png");
     transform: rotate(15deg);
     animation: bonusVidas 3s forwards linear;
 }
