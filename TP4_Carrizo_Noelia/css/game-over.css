@@ -1,9 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
-
-body{
-    font-family: "Open Sans",  Impact;
-}
-
 /* para hacerle la animacion al titulo de que perdio*/
 .area {
   text-align:center;
@@ -38,18 +32,19 @@ body{
       0px -10px 100px #7B96B8;}
 }
 
+/* titulo de instrucciones y de la pantalla principal */
 h1 {
-    font-size: 28px;
+    font-size: 18px;
     margin-top: 10px;
     color: hsla(0, 0%, 0%, .9);
-    font: normal 140px Varela Round, sans-serif;
+    font: normal 40px Varela Round, sans-serif; /* tamaño de la fuente */
     height: 20px;
     left: 0;
     letter-spacing: 5px;
     position: absolute;
     text-align: center;
     text-transform: uppercase;
-    top: 50%;
+    top: 5%;
     width: 100%;
     animation: move linear 2000ms infinite;  
   }
