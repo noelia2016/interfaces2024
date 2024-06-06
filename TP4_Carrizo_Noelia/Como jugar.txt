@@ -9,5 +9,7 @@ Suma vidas si agarra el circulo
 FALTA TERMINAR 
 
 el menu con las instrucciones de juego y una pantalla principal en la que se muestre para dirigirse al juego
-acomodar el personaje 
-hacer lo de las colisiones con los elementos para ver si pierde vidas o suma puntos
+acomodar el personaje --- LISTO
+hacer lo de las colisiones con los elementos para ver si pierde vidas o suma puntos --- LISTO
+Corregir las imagenes que muestra para sumar puntos y el bonus
+incluir sonido --- LISTO anda ahi justo

@@ -45,12 +45,12 @@ body {
 
 ul{
     list-style: none;
-    margin-top: 10%;
+    margin-top: 8%;
 }
 
 #instrucciones {
     color: blanchedalmond;
-    font-size: 21px;
+    font-size: 18px;
 }
 
 /* cuando pierde */
@@ -71,10 +71,12 @@ ul{
 
 }
 
+/* margen al logo para mostrar bien en pantalla */
 #menu img {
     margin-top: 10%;
 }
 
+/* el titulo cuando pierde el juego */
 .game-Over h1 {
     font-size: 58px;
     margin-top: 20px;
@@ -84,13 +86,13 @@ ul{
 }
 
 .game-Over h2 {
-    margin-top: 10px;
+    margin-top: 230px;
     padding: 0%;
 }
 
 #volverAJugar {
     width: 200px;
-    margin-bottom: 40%;
+    margin-top: 234px;
 }
 
 /* animacion para las instrucciones del juego */
@@ -136,17 +138,6 @@ button:hover {
 #portada {
     border-radius: 10px;
 }
-/*
-h1 {
-    font-size: 58px;
-    margin-top: 50px;
-    color: rgb(212, 6, 75);
-    box-shadow: 2px 2px rgba(245, 244, 244, 0.973);
-}
-
-h1:hover {
-    box-shadow: 8px 4px 3px 2px rgba(238, 2, 61, 0.2);
-}*/
 
 #menu img {
     height: 150px;
@@ -189,25 +180,6 @@ h1:hover {
 .timeOut {
     color: rgb(54, 3, 65);
 }
-
-
-/*
-#arboles {
-    height: 80%;
-    background: url("../images/obstaculos/arbusto.png") repeat-x;
-    background-size: 1000px 100%;
-    position: absolute;
-    animation: arboles 15s linear infinite;
-}
-
-@keyframes arboles {
-    0% {
-        background-position: 1000px
-    }
-    100% {
-        background-position: 0
-    }
-}*/
 
 #piso {
     height: 20%;
@@ -332,7 +304,7 @@ h1:hover {
     bottom: 60%;
     width: 110px;
     height: 70px;
-    background: url("../images/iconos/10028facewithoutmouth.png");
+    background: url("images/iconos/10028facewithoutmouth.png");
     animation: bonusVidas 3s forwards linear;
 }
 
