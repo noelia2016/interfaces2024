@@ -48,7 +48,7 @@ function listener(e) {
       l.innerHTML = "CUIDADO!!! .. al chocar con algun enemigo se te descuenta una vida.";
       break;
     case "animationiteration":
-      l.innerHTML = "Si podes agarrar el bonus (+corazon) sumas vidas.";
+      l.innerHTML = "";
       break;
   }
   document.getElementById("output").appendChild(l);

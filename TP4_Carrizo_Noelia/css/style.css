@@ -22,8 +22,9 @@ body {
 #menu, #gameOver, #instrucciones {
     background-image: linear-gradient(
         to bottom,
-        rgb(255 255 0 / 50%),
-        rgb(0 0 255 / 50%)
+        rgb(0 0 255 / 50%),
+        rgba(216 47 5 / 50%),
+        rgb(0 0 255 / 60%)
       ), url(../images/ef8af925cfbfed372b36a31a5930fdfe.jpg);
     background-size: 80%;
     width: 100%;
@@ -34,7 +35,8 @@ body {
     flex-direction: column;
     padding: 0px 10px;
     align-items: center;
-    
+    opacity: .9;
+    z-index: 1;
 }
 
 ul{
@@ -44,6 +46,42 @@ ul{
 #instrucciones {
     color: blanchedalmond;
     font-size: 21px;
+}
+
+/* cuando pierde */
+.game-Over {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(250, 249, 249);
+    text-align: center;
+    background-image: linear-gradient(
+        to bottom,
+        rgb(0 0 255 / 50%),
+        rgba(216 47 5 / 50%),
+        rgb(0 0 255 / 60%)
+      ), url(../images/ef8af925cfbfed372b36a31a5930fdfe.jpg);
+    background-size: 80%;
+    z-index: 2;
+
+}
+
+.game-Over h1 {
+    font-size: 58px;
+    margin-top: 10px;
+    padding: 0%;
+    color: rgb(252, 248, 249);
+    box-shadow: 2px 2px rgba(245, 244, 244, 0.973);
+}
+
+.game-Over h2 {
+    margin-top: 10px;
+    padding: 0%;
+}
+
+#volverAJugar {
+    width: 200px;
+    margin-bottom: 40%;
 }
 
 /* animacion para las instrucciones del juego */
@@ -142,6 +180,7 @@ h1:hover {
 .timeOut {
     color: rgb(54, 3, 65);
 }
+
 
 /*
 #arboles {
@@ -284,7 +323,7 @@ h1:hover {
     bottom: 60%;
     width: 110px;
     height: 70px;
-    background: url("../images/love-plus.png");
+    background: url("../images/iconos/10028facewithoutmouth.png");
     animation: bonusVidas 3s forwards linear;
 }
 
@@ -302,9 +341,9 @@ h1:hover {
 .bonus {
     position: absolute;
     bottom: 60%;
-    width: 140px;
-    height: 90px;
-    background: url("../images/anillo-de-fuego.png");
+    width: 120px;
+    height: 52px;
+    background: url("../images/love-plus.png");
     transform: rotate(15deg);
     animation: bonusVidas 3s forwards linear;
 }
