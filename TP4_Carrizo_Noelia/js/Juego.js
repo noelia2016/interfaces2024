@@ -16,6 +16,7 @@ let end= false; /** para finalizar el juego */
 let nuevoEnemigo;
 let nuevoBonus;
 let nuevaVida;
+let btnSonido = document.getElementById("clickBtn");
 
 // sonido de fondo
 let sonidoFondo = document.getElementById("sonidoFondo");
@@ -157,6 +158,8 @@ function startGame(){
 
     document.getElementById("menu").style.display = "none";
     document.getElementById("contenedor").style.display = "block";
+    sonidoFondo.play();
+    sonidoFondo.volume = 0.2;
 
     /* cada 3 segundos genera un enemigo */
     nuevoEnemigo = setInterval(generarEnemigo, 3000);
@@ -203,7 +206,7 @@ function gameOver(){
         document.getElementById("contenedor").classList.add("menu");
         document.getElementById("contenedor").innerHTML = `
         <div class="game-Over">
-            <h1> GAME OVER </h1>
+            <h1 class="area"> ⚠ GAME OVER ⚠</h1>
             <h2 class="game-Over">Puntos Obtenidos: ` + puntos + `</h2>
             <button class="btn" id="volverAJugar" onclick="startGame()">Volver a jugar</button>
         </div>`;

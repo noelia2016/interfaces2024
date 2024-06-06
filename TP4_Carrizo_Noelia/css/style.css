@@ -68,10 +68,10 @@ ul{
 
 .game-Over h1 {
     font-size: 58px;
-    margin-top: 10px;
-    padding: 0%;
-    color: rgb(252, 248, 249);
+    margin-top: 20px;
+    padding: 5px;
     box-shadow: 2px 2px rgba(245, 244, 244, 0.973);
+    border: 0cap;
 }
 
 .game-Over h2 {

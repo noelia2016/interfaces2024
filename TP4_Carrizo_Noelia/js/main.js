@@ -19,13 +19,11 @@ document.getElementById("jugarBtn").addEventListener("click", function() {
 
 // toma el evento para mostrar las instrucciones
 document.getElementById("instruccionesBtn").addEventListener("click", function() {
-  //btnSonido.play();
   showInstructions();
 });
 
 // toma el evento para mostrar las instrucciones
 document.getElementById("volverBtn").addEventListener("click", function() {
-  //btnSonido.play();
   backToMenu();
 });
 
