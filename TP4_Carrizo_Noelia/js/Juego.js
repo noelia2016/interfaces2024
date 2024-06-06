@@ -192,6 +192,7 @@ function gameOver(){
     clearInterval(nuevoEnemigo);
     clearInterval(nuevoBonus);
 
+    // despues de un tiempo muestra la pantalla de game over
     setTimeout(function() {
 
         document.getElementById("contenedor").classList.add("menu");
@@ -208,7 +209,7 @@ function gameOver(){
         document.getElementById("volverAJugar").addEventListener("click", () => {
             location.reload(); // Recarga la página para volver a jugar
         });
-    }, 500);
+    }, 600);
 
 
 }
