@@ -7,10 +7,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <title>Jugando con Noe - Interfaces 2024</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- para darle animacion al titulo de game over-->
+    <link rel="stylesheet" href="css/game-over.css">
 </head>
 <body>
     <nav id="menu">
-        <h1>Juguemos!!!!</h1>
+        <h1>Juguemos!!</h1>
+        <!--h1><em>J</em>
+            <em>u</em>
+            <em class="planet left">G</em>
+            <em>u</em>
+            <em>e</em>
+            <em class="planet left">M</em>
+            <em>o</em>
+            <em>s!!!!</em>
+        </h1-->
         <img src="images/gaming-video-logo.jpg" alt="logo de juegos">
         <button class="boton" id="jugarBtn">Jugar</button>
         <button class="boton" id="instruccionesBtn">¿Como jugar?</button>
@@ -20,7 +31,7 @@
         <ul id="output">
         </ul>
         <span>Tenes 4 minutos para poder jugar y ganar volando. Unicamente tenes 4 vidas no las desaproveches.</span>
-        <p>El juego termina cuando se termina el tiempo o las vidas.</p>
+        <p><b>El juego termina cuando se termina el tiempo o las vidas.</b></p>
         <h3>Para jugar? necesitas utilizar estas teclas</h3>
         <p>Pulsa la <span>barra espaciadora</span> o la <span>flecha para arriba</span> para esquivar obstaculos</p>
         <button class="btn" id="volverBtn">Volver al menú</button>
@@ -32,9 +43,7 @@
     <audio id="fin" src="audio/gameOver.mp3"></audio>
     
     <!-- para cuando pierde el juego -->
-    <div id="gameOver" style="display: none;">
-        <h1> GAME OVER </h1>
-        <button class="btn" onclick="startGame()">Volver a jugar</button>
+    <div id="gameOver" style="display:none;">
     </div>
 
     <!-- contenedor del juego -->

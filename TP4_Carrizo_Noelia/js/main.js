@@ -19,13 +19,11 @@ document.getElementById("jugarBtn").addEventListener("click", function() {
 
 // toma el evento para mostrar las instrucciones
 document.getElementById("instruccionesBtn").addEventListener("click", function() {
-  //btnSonido.play();
   showInstructions();
 });
 
 // toma el evento para mostrar las instrucciones
 document.getElementById("volverBtn").addEventListener("click", function() {
-  //btnSonido.play();
   backToMenu();
 });
 
@@ -48,7 +46,7 @@ function listener(e) {
       l.innerHTML = "CUIDADO!!! .. al chocar con algun enemigo se te descuenta una vida.";
       break;
     case "animationiteration":
-      l.innerHTML = "Si podes agarrar el bonus (+corazon) sumas vidas.";
+      l.innerHTML = "";
       break;
   }
   document.getElementById("output").appendChild(l);

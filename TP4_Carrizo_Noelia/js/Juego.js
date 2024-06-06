@@ -8,14 +8,18 @@
  * 4 minutos
 */
 let tiempo = 240;
-let puntos = 0;
-let vida = 4;
+let puntos = 0; // contabiliza los puntos 
+let vida = 4; // estas son las vidas que va a tener para poder jugar
 let intervalo = 0;
 let cantColisiones = 0;
 let end= false; /** para finalizar el juego */
 let nuevoEnemigo;
 let nuevoBonus;
-let nuevoVidas;
+let nuevaVida;
+let btnSonido = document.getElementById("clickBtn");
+
+// sonido de fondo
+let sonidoFondo = document.getElementById("sonidoFondo");
 
 const personaje = document.getElementById("personaje");
 const enemigos = document.getElementsByClassName('enemigo');
@@ -24,7 +28,7 @@ const vidas = document.getElementsByClassName('nuevaVida');
 // los botones de juego y demas
 const btns = document.getElementsByClassName('btn');
 
-//muestro en pantalla la vida y los putnos
+//muestro en pantalla la vida y los puntos
 document.getElementById('puntos').textContent = "PUNTOS: " + puntos;
 document.getElementById('vidas').textContent = "VIDAS: " + vida;
 
@@ -80,7 +84,8 @@ function volverAlPersonaje() {
 /** chequeo si se choca contra algun enemigo, puntos o bonus de sumar vidas */
 function checkCollision(elementos){
 
-    if (cantColisiones >= 3) {
+    // si choca con los enemigos y no tiene mas vidas
+    if (cantColisiones >= vida) {
         return true; // Salir de la función si ya se ha producido una colisión
     }
 
@@ -100,6 +105,7 @@ function checkCollision(elementos){
                     //cambio la imagen para hacer la "animación"
                     personaje.style.backgroundImage = "url(images/personaje/personaje-colision.png)";
                     setTimeout(volverAlPersonaje, 600);
+                    // si choca resto vidas y lo muestro en pantalla
                     vida--;
                     document.getElementById('vidas').textContent = "Vidas: " + vida;
                     elemento.classList.add('golpeado'); // Marcar el enemigo como golpeado
@@ -109,6 +115,7 @@ function checkCollision(elementos){
                     // cambio la imagen para hacer la "animación"
                     personaje.style.backgroundImage = "url(images/personaje/pj_bonus.png)";
                     setTimeout(volverAlPersonaje, 600);
+                    // si agarro bonus sumo puntos y tiempo al juego para que continue divirtiendose
                     puntos += 10;
                     tiempo += 10;
                     document.getElementById('puntos').textContent = "Puntos: " + puntos;
@@ -151,6 +158,8 @@ function startGame(){
 
     document.getElementById("menu").style.display = "none";
     document.getElementById("contenedor").style.display = "block";
+    sonidoFondo.play();
+    sonidoFondo.volume = 0.2;
 
     /* cada 3 segundos genera un enemigo */
     nuevoEnemigo = setInterval(generarEnemigo, 3000);
@@ -197,10 +206,10 @@ function gameOver(){
 
         document.getElementById("contenedor").classList.add("menu");
         document.getElementById("contenedor").innerHTML = `
-        <div class="over">
-            <h1 class="over">GAME OVER</h1>
-            <h2>Puntos Obtenidos: ` + puntos + `</h2>
-            <button class="btn" id="volverAJugar">Volver a jugar</button>
+        <div class="game-Over">
+            <h1 class="area"> ⚠ GAME OVER ⚠</h1>
+            <h2 class="game-Over">Puntos Obtenidos: ` + puntos + `</h2>
+            <button class="btn" id="volverAJugar" onclick="startGame()">Volver a jugar</button>
         </div>`;
 
         // saco el sonido
