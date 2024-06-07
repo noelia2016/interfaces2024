@@ -21,6 +21,7 @@ let btnSonido = document.getElementById("clickBtn");
 // sonido de fondo
 let sonidoFondo = document.getElementById("sonidoFondo");
 
+// tomo los elementos a interactuar en el juego
 const personaje = document.getElementById("personaje");
 const enemigos = document.getElementsByClassName('enemigo');
 const bonus = document.getElementsByClassName('bonus');
@@ -76,7 +77,7 @@ function actualizarReloj() {
 
 }
 
-//Vuelve a la imagen original
+// Vuelve a la imagen original despues de poner el personaje de bonus 
 function volverAlPersonaje() {
     personaje.style.backgroundImage = "url(images/personaje/pajaro.png)";
 }
@@ -124,8 +125,6 @@ function checkCollision(elementos){
                 // choque con un corazon (vida)
                 if (elemento.classList.contains('nuevaVida')) {
                     //cambio la imagen para hacer la "animación"
-                    personaje.style.backgroundImage = "url(images/personaje/pj-vida.png)";
-                    setTimeout(volverAlPersonaje, 600);
                     vida++;
                     document.getElementById('vidas').textContent = "Vidas: " + vida;
                     elemento.remove(); // Eliminar la vida del DOM

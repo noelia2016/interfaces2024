@@ -277,54 +277,13 @@ button:hover {
     }
 }
 
-/* esto serian los obstaculos que le aparecen al personaje */
-/*.enemigo {
-    position: absolute;
-    bottom: 23%; /* posicion en la que aparece a partir del suelo del juego /
-    width: 313px;
-    height: 260px;
-    background: url("../images/obstaculos/Tree.png");
-    box-shadow: 36px;
-    animation: enemigo 9s linear infinite;
-    background-repeat: no-repeat;
-}
-
-@keyframes enemigo {
-    from {
-      left: 100%;
-    }
-    to {
-      left: -10%; /* distancia entre obstaculo /
-    }
-}*/
-
-/* para sumar vidas */
-.bonusVidas {
-    position: absolute;
-    bottom: 60%;
-    width: 110px;
-    height: 70px;
-    background: url("images/iconos/10028facewithoutmouth.png");
-    animation: bonusVidas 3s forwards linear;
-}
-
-@keyframes bonusVidas {
-    from {
-        left: 100%;
-    }
-    to {
-        left: -15%;
-    }
-}
-
-
 /* para sumar puntos */
 .bonus {
     position: absolute;
     bottom: 60%;
-    width: 120px;
-    height: 52px;
-    background: url("../images/love-plus.png");
+    width: 38px;
+    height: 34px;
+    background: url("../images/iconos/vidas.png");
     transform: rotate(15deg);
     animation: bonusVidas 3s forwards linear;
 }
@@ -343,4 +302,21 @@ button:hover {
     display: none;
 }
 
+.nuevaVida {
+    position: absolute;
+    bottom: 60%;
+    width: 72px;
+    height: 72px;
+    background: url("../images/iconos/estrella.png");
+    /* se alterna vidas con bonus */
+    animation: nuevaVida 3s steps(4) infinite, bonus 5s linear infinite;
+}
 
+@keyframes nuevaVida {
+    from {
+        left: 100%;
+    }
+    to {
+        left: -15%;
+    }
+}
