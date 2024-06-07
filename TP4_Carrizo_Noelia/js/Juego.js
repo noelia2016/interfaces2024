@@ -16,6 +16,7 @@ let end= false; /** para finalizar el juego */
 let nuevoEnemigo;
 let nuevoBonus;
 let nuevaVida;
+let bonusExtra;
 let btnSonido = document.getElementById("clickBtn");
 
 // sonido de fondo
@@ -25,6 +26,7 @@ let sonidoFondo = document.getElementById("sonidoFondo");
 const personaje = document.getElementById("personaje");
 const enemigos = document.getElementsByClassName('enemigo');
 const bonus = document.getElementsByClassName('bonus');
+const bonusE = document.getElementsByClassName('bonusExtra');
 const vidas = document.getElementsByClassName('nuevaVida');
 // los botones de juego y demas
 const btns = document.getElementsByClassName('btn');
@@ -42,6 +44,11 @@ function generarEnemigo() {
 /** genera bonus */
 function generarBonus() {
     let bonus = new Bonus();
+}
+
+/** genera bonus */
+function generarBonusExtra() {
+    let bonusE = new Bonus();
 }
 
 /** genera vidas  */
@@ -122,6 +129,15 @@ function checkCollision(elementos){
                     document.getElementById('puntos').textContent = "Puntos: " + puntos;
                     elemento.remove(); // Eliminar el bonus del DOM
                 }
+
+                //choque con bonus que suma un puntaje extra
+                if (elemento.classList.contains('bonusE')) {
+                    // si agarro bonus sumo puntos y tiempo al juego para que continue divirtiendose
+                    puntos += 100;
+                    document.getElementById('puntos').textContent = "Puntos: " + puntos;
+                    elemento.remove(); // Eliminar el bonus del DOM
+                }
+
                 // choque con un corazon (vida)
                 if (elemento.classList.contains('nuevaVida')) {
                     //cambio la imagen para hacer la "animación"
@@ -138,8 +154,10 @@ function checkCollision(elementos){
             if (vida == 0) {
                 //"elimino" los intervalos para que deje de generar nuevos objetos
                 clearInterval(intervalo);
-                clearInterval(nuevaVida);
                 clearInterval(nuevoEnemigo);
+                clearInterval(nuevoBonus);
+                clearInterval(bonusExtra);
+                clearInterval(nuevaVida);
                 //fin del juego
                 gameOver();
             }
@@ -181,6 +199,8 @@ function startGame(){
     /* cada 7 segundos genera un bonus */
     nuevaVida = setInterval(generarVidas, 7000);
 
+    bonusExtra = setInterval(generarBonusExtra, 8000);
+
     // Inicia el contador del juego
     intervalo = setInterval(actualizarReloj, 1000);
 
@@ -202,6 +222,7 @@ function gameOver(){
     end = true; // finaliza el juego 
     clearInterval(nuevoEnemigo);
     clearInterval(nuevoBonus);
+    clearInterval(nuevaVida);
 
     // despues de un tiempo muestra la pantalla de game over
     setTimeout(function() {

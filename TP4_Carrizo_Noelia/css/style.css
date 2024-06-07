@@ -283,9 +283,9 @@ button:hover {
     bottom: 50%;
     width: 38px;
     height: 34px;
-    background: url("../images/iconos/vidas.png"); /* corazon aparece */
+    background: url("../images/iconos/vidas.png") repeat-x; /* corazon aparece */
     transform: rotate(15deg);
-    animation: bonusVidas 5s forwards infinite;
+    animation: bonus 4s forwards linear;
 }
 
 @keyframes bonus {
@@ -304,15 +304,34 @@ button:hover {
 
 .nuevaVida {
     position: absolute;
-    bottom: 60%;
+    bottom: 56%;
     width: 72px;
     height: 72px;
-    background: url("../images/iconos/estrella.png");
+    background: url("../images/iconos/estrella.png") ;
     /* se alterna vidas con bonus */
-    animation: nuevaVida 3s steps(4) infinite/*, bonus 5s linear infinite*/;
+    animation: nuevaVida 8s steps(4) infinite, bonusExtra 4s forwards linear ;
 }
 
 @keyframes nuevaVida {
+    from {
+        left: 100%;
+    }
+    to {
+        left: -15%;
+    }
+}
+
+/* si agarra bombitas suma 100 puntos*/
+.bonusExtra {
+    position: absolute;
+    bottom: 50%;
+    width: 68px;
+    height: 54px;
+    background: url("../images/iconos/bomba.png");
+    animation: bonusExtra 9s forwards linear;
+}
+
+@keyframes bonusExtra {
     from {
         left: 100%;
     }
