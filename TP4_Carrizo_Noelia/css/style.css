@@ -92,7 +92,7 @@ ul{
 
 #volverAJugar {
     width: 200px;
-    margin-top: 234px;
+    /*margin-top: 134px;*/
 }
 
 /* animacion para las instrucciones del juego */
@@ -280,12 +280,12 @@ button:hover {
 /* para sumar puntos */
 .bonus {
     position: absolute;
-    bottom: 60%;
+    bottom: 50%;
     width: 38px;
     height: 34px;
-    background: url("../images/iconos/vidas.png");
+    background: url("../images/iconos/vidas.png"); /* corazon aparece */
     transform: rotate(15deg);
-    animation: bonusVidas 3s forwards linear;
+    animation: bonusVidas 5s forwards infinite;
 }
 
 @keyframes bonus {
@@ -309,7 +309,7 @@ button:hover {
     height: 72px;
     background: url("../images/iconos/estrella.png");
     /* se alterna vidas con bonus */
-    animation: nuevaVida 3s steps(4) infinite, bonus 5s linear infinite;
+    animation: nuevaVida 3s steps(4) infinite/*, bonus 5s linear infinite*/;
 }
 
 @keyframes nuevaVida {

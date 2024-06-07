@@ -125,6 +125,9 @@ function checkCollision(elementos){
                 // choque con un corazon (vida)
                 if (elemento.classList.contains('nuevaVida')) {
                     //cambio la imagen para hacer la "animación"
+                    //se agrega sonido de salto
+                    let vidaSonido = document.getElementById("vidaSonido");
+                    vidaSonido.currentTime = 0;
                     vida++;
                     document.getElementById('vidas').textContent = "Vidas: " + vida;
                     elemento.remove(); // Eliminar la vida del DOM
@@ -160,8 +163,8 @@ function startGame(){
     sonidoFondo.play();
     sonidoFondo.volume = 0.2;
 
-    /* cada 3 segundos genera un enemigo */
-    nuevoEnemigo = setInterval(generarEnemigo, 3000);
+    /* cada 4 segundos genera un enemigo */
+    nuevoEnemigo = setInterval(generarEnemigo, 4000);
 
     /* Chequeo colision con enemigo */
     setInterval(function() { checkCollision(enemigos) }, 50);
@@ -208,6 +211,7 @@ function gameOver(){
         <div class="game-Over">
             <h1 class="area"> ⚠ GAME OVER ⚠</h1>
             <h2 class="game-Over">Puntos Obtenidos: ` + puntos + `</h2>
+            <img class="p-muere" src="images/cemetery-ave.png" alt="Santo sepelio al pajaro"/>
             <button class="btn" id="volverAJugar" onclick="startGame()">Volver a jugar</button>
         </div>`;
 

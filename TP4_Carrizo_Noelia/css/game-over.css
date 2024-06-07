@@ -115,3 +115,13 @@ h1 {
       ;
     }  
   }
+
+  
+  .p-muere { 
+    height: 338px;
+    width: 338px;
+    /* para que no se vea el fondo */
+    filter:brightness(1.1);
+    mix-blend-mode: multiply;
+    box-shadow: 3px 2px 2px 3px rgba(100, 99, 99, 0.2);
+  }
