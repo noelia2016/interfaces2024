@@ -28,10 +28,12 @@
         <button class="btn" id="volverBtn">Volver al menú</button>
     </div>
     
-    <!-- audios  -->
+    <!-- audios  para las distintas acciones-->
     <audio id="sonidoFondo" src="audio/juego.mp3" loop></audio>
     <audio id="saltoSonido" src="audio/salto.mp3"></audio>
-    <audio id="vidaSonido" src="audio/salto.mp3"></audio>
+    <audio id="vidaSonido" src="audio/8-bit-audio-with-bonus.mp3"></audio>
+    <audio id="sEnemigo" src="audio/rumble-of-wooden-boards.mp3"></audio>
+    <audio id="sBonus" src="audio/notification-bonus-points.mp3"></audio>
     <audio id="fin" src="audio/gameOver.mp3"></audio>
     
     <!-- para cuando pierde el juego -->
@@ -41,7 +43,7 @@
     <!-- contenedor del juego -->
     <div id="contenedor" style="display: none;">
         <div id="cielo">
-            <div id="contador"></div>
+            <div id="contador" class="display-time"></div>
             <div id="puntos"></div>
             <div id="vidas"></div>
         </div>

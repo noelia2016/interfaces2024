@@ -176,10 +176,32 @@ button:hover {
     padding: 8px;
 }
 
-/* el contador */
-.timeOut {
-    color: rgb(54, 3, 65);
-}
+/* para aplicarle estilo al contador */
+.display-time {
+    height: 20px;
+    width: 50px;
+    display: flex;
+    font-size: 18px;
+    font-weight: bold;
+    align-content: center;
+    border: 2px solid #f59301cb;
+    margin-top: 8px;
+    margin-left: 8px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: ease-in-out 0.1s;
+    transition-property: background, box-shadow, color;
+    -webkit-box-reflect: below 2px
+      linear-gradient(transparent, rgba(240, 92, 92, 0.05));
+  }
+  
+  .display-time:hover {
+    background: #ffd868;
+    box-shadow: 0 0 30px#ffd868;
+    color: #272727;
+    cursor: pointer;
+  }
+  
 
 #piso {
     height: 20%;
@@ -285,7 +307,7 @@ button:hover {
     height: 34px;
     background: url("../images/iconos/vidas.png") repeat-x; /* corazon aparece */
     transform: rotate(15deg);
-    animation: bonus 4s forwards linear;
+    animation: bonus 5s forwards linear;
 }
 
 @keyframes bonus {
@@ -293,7 +315,7 @@ button:hover {
         left: 100%;
     }
     to {
-        left: -15%;
+        left: -40%;
     }
 }
 
@@ -302,14 +324,35 @@ button:hover {
     display: none;
 }
 
+/* si agarra bombitas suma 100 puntos*/
+.bonusExtra {
+    position: absolute;
+    bottom: 50%;
+    width: 68px;
+    height: 54px;
+    transform: rotate(15deg);
+    background: url("../images/iconos/bomba.png");
+    animation: bonusExtra 7s forwards linear;
+}
+
+@keyframes bonusExtra {
+    from {
+        left: 100%;
+    }
+    to {
+        left: -15%;
+    }
+}
+
 .nuevaVida {
     position: absolute;
-    bottom: 56%;
+    bottom: 50%;
     width: 72px;
     height: 72px;
+    transform: rotate(15deg);
     background: url("../images/iconos/estrella.png") ;
     /* se alterna vidas con bonus */
-    animation: nuevaVida 8s steps(4) infinite, bonusExtra 4s forwards linear ;
+    animation: nuevaVida 8s steps(4) infinite, bonus 5s forwards linear ;
 }
 
 @keyframes nuevaVida {
@@ -321,21 +364,4 @@ button:hover {
     }
 }
 
-/* si agarra bombitas suma 100 puntos*/
-.bonusExtra {
-    position: absolute;
-    bottom: 50%;
-    width: 68px;
-    height: 54px;
-    background: url("../images/iconos/bomba.png");
-    animation: bonusExtra 9s forwards linear;
-}
 
-@keyframes bonusExtra {
-    from {
-        left: 100%;
-    }
-    to {
-        left: -15%;
-    }
-}

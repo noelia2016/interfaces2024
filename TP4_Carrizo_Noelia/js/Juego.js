@@ -16,7 +16,7 @@ let end= false; /** para finalizar el juego */
 let nuevoEnemigo;
 let nuevoBonus;
 let nuevaVida;
-let bonusExtra;
+let nuevoBExtra;
 let btnSonido = document.getElementById("clickBtn");
 
 // sonido de fondo
@@ -26,7 +26,7 @@ let sonidoFondo = document.getElementById("sonidoFondo");
 const personaje = document.getElementById("personaje");
 const enemigos = document.getElementsByClassName('enemigo');
 const bonus = document.getElementsByClassName('bonus');
-const bonusE = document.getElementsByClassName('bonusExtra');
+const bonusExtra = document.getElementsByClassName('bonusExtra');
 const vidas = document.getElementsByClassName('nuevaVida');
 // los botones de juego y demas
 const btns = document.getElementsByClassName('btn');
@@ -48,7 +48,7 @@ function generarBonus() {
 
 /** genera bonus */
 function generarBonusExtra() {
-    let bonusE = new Bonus();
+    let bonusExtra = new Bonus();
 }
 
 /** genera vidas  */
@@ -110,6 +110,8 @@ function checkCollision(elementos){
             if (!elemento.classList.contains('golpeado')) {
                 //cuando choca contra enemigo
                 if (elemento.classList.contains('enemigo')) {
+                    let enemigo = document.getElementById("sEnemigo");
+                    enemigo.play();
                     //cambio la imagen para hacer la "animación"
                     personaje.style.backgroundImage = "url(images/personaje/personaje-colision.png)";
                     setTimeout(volverAlPersonaje, 600);
@@ -120,6 +122,10 @@ function checkCollision(elementos){
                 }
                 //choque con bonus
                 if (elemento.classList.contains('bonus')) {
+
+                    // sonido para cuando agarra bonus
+                    let sBonus = document.getElementById("sBonus");
+                    sBonus.play();
                     // cambio la imagen para hacer la "animación"
                     personaje.style.backgroundImage = "url(images/personaje/pj_bonus.png)";
                     setTimeout(volverAlPersonaje, 600);
@@ -143,6 +149,7 @@ function checkCollision(elementos){
                     //cambio la imagen para hacer la "animación"
                     //se agrega sonido de salto
                     let vidaSonido = document.getElementById("vidaSonido");
+                    vidaSonido.play();
                     vidaSonido.currentTime = 0;
                     vida++;
                     document.getElementById('vidas').textContent = "Vidas: " + vida;
@@ -156,7 +163,7 @@ function checkCollision(elementos){
                 clearInterval(intervalo);
                 clearInterval(nuevoEnemigo);
                 clearInterval(nuevoBonus);
-                clearInterval(bonusExtra);
+                clearInterval(nuevoBExtra);
                 clearInterval(nuevaVida);
                 //fin del juego
                 gameOver();
@@ -193,13 +200,15 @@ function startGame(){
     /* Chequeo colision con vida */
     setInterval(function() { checkCollision(vidas) }, 50);
 
+    setInterval(function() { checkCollision(bonusExtra) }, 50);
+
     /* cada 5 segundos genera un bonus */
     nuevoBonus = setInterval(generarBonus, 5000);
 
     /* cada 7 segundos genera un bonus */
     nuevaVida = setInterval(generarVidas, 7000);
 
-    bonusExtra = setInterval(generarBonusExtra, 8000);
+    nuevoBExtra = setInterval(generarBonusExtra, 8000);
 
     // Inicia el contador del juego
     intervalo = setInterval(actualizarReloj, 1000);
@@ -223,6 +232,7 @@ function gameOver(){
     clearInterval(nuevoEnemigo);
     clearInterval(nuevoBonus);
     clearInterval(nuevaVida);
+    clearInterval(nuevoBExtra);
 
     // despues de un tiempo muestra la pantalla de game over
     setTimeout(function() {
