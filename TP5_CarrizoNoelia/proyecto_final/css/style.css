@@ -95,3 +95,76 @@ footer {
     width: 6.5rem;
     height: 5.5rem;
 }
+
+/* para la galeria ppal de la home */
+.contenedor-galeria {
+    display: grid;
+    place-items: center;
+    width: 150px;
+}
+
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    max-width: 400px;
+}
+
+.contenedor-imagen {
+    position: relative;
+    left: 0;
+    width: 1300px; /* altura de la galeria */
+    border-radius: 5px;
+    height: 340px; /* altura de la galeria */
+    overflow: hidden;
+    background-color: #efefef;
+    transition: 0.4s ease-in-out;
+    box-shadow: 0 5px 12px rgb(0, 0, 0, 0.5);
+    flex: 0.25;
+}
+
+.contenedor-imagen img {
+    height: 340px;
+    width: 1300px;
+    object-fit: cover;
+}
+
+.contenedor-imagen:hover {
+    flex: 2;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+/* para los formularios de la web */
+.contenedor-form {
+    
+    max-width: 1400px;
+    width: 70%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 5%;
+    margin-left: 20%;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.inputs, button.boton-form {
+    flex: 3 0 calc(33.33% - 10px);
+    padding: 10px;
+    margin: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button.boton-form {
+    background-color: blueviolet;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
