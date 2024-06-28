@@ -6,3 +6,92 @@ body {
     overflow-x: hidden;
     font-family: "Open Sans",  Impact;
 }
+
+ul {
+    list-style: none;
+    margin-top: 8%;
+}
+
+header {
+    background-color: #6e70ec;
+    margin-top: auto;
+    position: relative;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* margen al logo para mostrar bien en pantalla */
+#menu img {
+    margin-top: 10%;
+}
+
+
+article{
+
+}
+
+/* estilos para el footer del sitio */
+footer {
+    background-color: #6e70ec;
+    top: 4.5rem;
+    margin-top: auto;
+    position: relative;
+    height: 7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.textRedes {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
+
+.footer_texto {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: white;
+    text-align: center;
+    justify-content: space-around;
+    height: 90%;
+    padding: 0.5rem 1rem 0 3rem;
+}
+
+.footer_texto p {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.logo {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.redes {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-left: 2rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+.socialIcon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.logo-footer {
+    width: 6.5rem;
+    height: 5.5rem;
+}
