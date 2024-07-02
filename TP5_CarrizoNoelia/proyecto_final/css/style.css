@@ -1,3 +1,9 @@
+:root {
+	--primary: #121f3d;
+	--white: #fff;
+	--gray: #2a324b;
+}
+
 body {
     margin: 0;
     max-height: 100%;
@@ -5,47 +11,104 @@ body {
     overflow-y: hidden; 
     overflow-x: hidden;
     font-family: "Open Sans",  Impact;
+    color: var(--white);
+    background-color: var(--primary);
+	
 }
 
-ul {
-    list-style: none;
-    margin-top: 8%;
+.content {
+	background-color: var(--white);
+    height: 345px;
 }
 
-header {
-    background-color: #6e70ec;
-    margin-top: auto;
-    position: relative;
-    height: 5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
+.nav {
+	border-bottom: 1px solid var(--gray);
 }
 
-/* margen al logo para mostrar bien en pantalla */
-#menu img {
-    margin-top: 10%;
+.nav_toggle {
+	position: absolute;
+	cursor: pointer;
+	margin: 0 1rem;
+	right: 0;
 }
 
-
-article{
-
+.nav_toggle svg {
+	width: 1rem;
+	fill: var(--white);
 }
+
+.nav_toggle .close {
+	display: none;
+}
+
+.nav_toggle .close,
+.nav_toggle .menu {
+	margin-top: 0.3rem;
+}
+
+.nav_checkbox {
+	display: none;
+}
+
+.nav_menu {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	align-items: center;
+	margin: 1rem;
+}
+
+.nav_menu li {
+	list-style-type: none;
+	display: none;
+}
+
+.nav_menu li:first-child {
+	margin-right: auto;
+	display: block;
+}
+
+.nav_menu a {
+	text-decoration: none;
+	color: inherit;
+	font-size: 1.1rem;
+}
+
+.menu_logo {
+	height: 90px;
+}
+
+.menu_logo img {
+	height: 100%;
+}
+
+#nav_checkbox:checked ~ ul.nav_menu li {
+	display: block;
+}
+
+#nav_checkbox:checked ~ label.nav_toggle .close {
+	display: block;
+}
+
+#nav_checkbox:checked ~ label.nav_toggle .menu {
+	display: none;
+}
+
 
 /* estilos para el footer del sitio */
-footer {
-    background-color: #6e70ec;
+.footer {
+	border-top: 1px solid var(--gray);
+	height: 30px;
+	display: flex;
     top: 4.5rem;
     margin-top: auto;
     position: relative;
-    height: 7rem;
-    display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
+}
+
+footer a {
+	color: var(--white);
 }
 
 .textRedes {
@@ -58,7 +121,6 @@ footer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    color: white;
     text-align: center;
     justify-content: space-around;
     height: 90%;
@@ -145,7 +207,6 @@ footer {
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 8px;
-    margin-top: 5%;
     margin-left: 20%;
 }
 
@@ -168,3 +229,20 @@ button.boton-form {
     border: none;
     cursor: pointer;
 }
+
+
+/* para cuando la pantalla es grande cambian algunas cosas para que se vea el menu complet*/
+@media only screen and (min-width: 560px) {
+	.nav_toggle {
+		display: none;
+	}
+
+	.nav_menu {
+		flex-direction: row;
+	}
+
+	.nav_menu li {
+		display: block;
+	}
+}
+
