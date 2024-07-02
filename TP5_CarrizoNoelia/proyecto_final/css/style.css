@@ -1,7 +1,9 @@
+/* paleta de colores para usar */
 :root {
 	--primary: #121f3d;
 	--white: #fff;
 	--gray: #2a324b;
+    --normal: #000000;
 }
 
 body {
@@ -16,9 +18,16 @@ body {
 	
 }
 
+h2, h3, label, p, .content ul {
+    color: var(--normal);
+}
+
+/* contenedor ppal donde va a contener formularios y demas info a mostrar */
 .content {
+    padding-top: 65px;
 	background-color: var(--white);
-    height: 345px;
+    height: auto;
+    padding-bottom: 3%;
 }
 
 .nav {
@@ -97,10 +106,9 @@ body {
 
 /* estilos para el footer del sitio */
 .footer {
-	border-top: 1px solid var(--gray);
 	height: 30px;
 	display: flex;
-    top: 4.5rem;
+    top: 3.5rem;
     margin-top: auto;
     position: relative;
     justify-content: space-between;
@@ -124,18 +132,19 @@ footer a {
     text-align: center;
     justify-content: space-around;
     height: 90%;
-    padding: 0.5rem 1rem 0 3rem;
+    padding: 0.3rem 1rem 0 5rem;
 }
 
 .footer_texto p {
     margin-bottom: 8px;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .logo {
     width: 40%;
     display: flex;
     justify-content: center;
+    padding-bottom: 1rem;
 }
 
 .redes {
@@ -199,7 +208,6 @@ footer a {
 
 /* para los formularios de la web */
 .contenedor-form {
-    
     max-width: 1400px;
     width: 70%;
     padding: 20px;

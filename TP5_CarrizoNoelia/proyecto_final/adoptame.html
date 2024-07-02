@@ -9,44 +9,60 @@
     
 </head>
 <body>
-    <header>
-        <img src="" id="logo"/>
-        <nav class="menuppal">
-            <ul>
-              <li><a href="#">INICIO</a></li>
-              <li><a href="#">ADOPTAME</a></li>
-              <li><a href="#">DENUNCIA</a></li>
-              <li><a href="#">CONOCENOS</a></li>
-              <li><a href="#">CONTACTO</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section>
-        <article>
-            <h2>Requisitos de adopción</h2>
-            <ul>
-                <li>Ser mayor a 18 años.</li>
-                <li>Amar a las mascotas y poder dedicarle el tiempo que necesite.</li>
-                <li>Querer sumar un integrante a tu vida por el resto de la suya, sin importar los cambios que se presenten.</li>
-                <li>Estar bien predispuesto: te pedimos cargues tu solicitud, realices una entrevista con el especialistas y respondas a nuestro contacto.</li>
-                <li>Comprometerse con el cuidado, la salud y la castración de la mascota.</li>
-                <li>Tener un veterinario de confianza.</li>
-            </ul>
-            <!-- esto lo muestra si esta logueado para poder adoptar-->
-            <form>
-                <div> 
-                    <label for="">¿Estás dispuesto a adoptar al animal con el compromiso de vacunación anual, desparasitación y castración?</label>
-                    <input type="radio">SI.
-                    <input type="radio">NO.
-                </div>
-                <button>Aceptar y continuar</button>
-            </form>
-        </article>
-        <aside></aside>
-    </section>
-    <footer>
+    <nav class="nav">
+		<input type="checkbox" name="" id="nav_checkbox" class="nav_checkbox" />
+		<label for="nav_checkbox" class="nav_toggle">
+			<!-- Menu -->
+			<svg class="menu" viewBox="0 0 448 512" width="100" title="bars">
+				<path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" />
+			</svg>
+
+			<!-- Close -->
+			<svg class="close" viewBox="0 0 384 512" width="100" title="times">
+				<path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z" />
+			</svg>
+		</label>
+
+		<ul class="nav_menu">
+			<li class="menu_logo">
+				<img src="images/logo/logo_asoc.png" id="logo" alt="Logo de la ONG"/>
+                <img src="images/logo/nombre_asoc.png" id="logo" alt="Nombre de la asociacion"/>
+			</li>
+            <li><a href="index.html">INICIO</a></li>
+            <li><a href="adoptame.html">ADOPTAME</a></li>
+            <li><a href="denuncia.html">DENUNCIA</a></li>
+            <li><a href="conocenos.html">CONOCENOS</a></li>
+            <li><a href="contacto.html">CONTACTO</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <section>
+            <article>
+                <h2>Requisitos de adopción</h2>
+                <ul>
+                    <li>Ser mayor a 18 años.</li>
+                    <li>Amar a las mascotas y poder dedicarle el tiempo que necesite.</li>
+                    <li>Querer sumar un integrante a tu vida por el resto de la suya, sin importar los cambios que se presenten.</li>
+                    <li>Estar bien predispuesto: te pedimos cargues tu solicitud, realices una entrevista con el especialistas y respondas a nuestro contacto.</li>
+                    <li>Comprometerse con el cuidado, la salud y la castración de la mascota.</li>
+                    <li>Tener un veterinario de confianza.</li>
+                </ul>
+                <!-- esto lo muestra si esta logueado para poder adoptar-->
+                <form>
+                    <div> 
+                        <label for="">¿Estás dispuesto a adoptar al animal con el compromiso de vacunación anual, desparasitación y castración?</label>
+                        <input type="radio">SI.
+                        <input type="radio">NO.
+                    </div>
+                    <button>Aceptar y continuar</button>
+                </form>
+            </article>
+            <aside></aside>
+        </section>
+    </div>
+    <footer class="footer">
         <div class="logo">
-            <img class="logo-footer" src="images/logo_Pacma.png" alt="logo de la institucion">
+            <img class="logo-footer" src="images/logo/logo_asoc.png" alt="logo de la institucion">
         </div>
         <div class="textRedes">
             <div class="footer_texto">Creado por Carrizo, Noelia - Interfaces de Usuario 2024 UNICEN</div>
