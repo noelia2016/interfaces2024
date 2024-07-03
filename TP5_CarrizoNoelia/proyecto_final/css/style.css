@@ -1,9 +1,10 @@
 /* paleta de colores para usar */
 :root {
-	--primary: #121f3d;
-	--white: #fff;
-	--gray: #2a324b;
-    --normal: #000000;
+	--primary: #004643;
+	--white: #fffffe;
+	--gray: #abd1c6;
+    --normal: #001e1d;
+    --boton:#f9bc60;
 }
 
 body {
@@ -12,13 +13,13 @@ body {
     font-size: 14px;
     overflow-y: hidden; 
     overflow-x: hidden;
-    font-family: "Open Sans",  Impact;
+    font-family: 'Roboto';font-size: 22px;
     color: var(--white);
     background-color: var(--primary);
 	
 }
 
-h2, h3, label, p, .content ul {
+h2, h3, label, p, .content ul, button {
     color: var(--normal);
 }
 
@@ -212,7 +213,7 @@ footer a {
     width: 70%;
     padding: 20px;
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: var(--secondary);
     border: 1px solid #ccc;
     border-radius: 8px;
     margin-left: 20%;
@@ -232,10 +233,12 @@ form {
 }
 
 button.boton-form {
-    background-color: blueviolet;
-    color: #fff;
+    background-color: var(--boton);
+    color: var(--normal);
     border: none;
     cursor: pointer;
+    border-radius: 0.5rem;
+    font-weight: bold;
 }
 
 
