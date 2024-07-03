@@ -239,6 +239,78 @@ button.boton-form {
 }
 
 
+/* para la home ppal */
+.elementor-element {
+    --widgets-spacing: 20px;
+}
+
+.elementor-element {
+    --flex-direction: initial;
+    --flex-wrap: initial;
+    --justify-content: initial;
+    --align-items: initial;
+    --align-content: initial;
+    --gap: initial;
+    --flex-basis: initial;
+    --flex-grow: initial;
+    --flex-shrink: initial;
+    --order: initial;
+    --align-self: initial;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: var(--flex-direction);
+    flex-direction: var(--flex-direction);
+    -ms-flex-wrap: var(--flex-wrap);
+    flex-wrap: var(--flex-wrap);
+    -webkit-box-pack: var(--justify-content);
+    -ms-flex-pack: var(--justify-content);
+    justify-content: var(--justify-content);
+    -webkit-box-align: var(--align-items);
+    -ms-flex-align: var(--align-items);
+    align-items: var(--align-items);
+    -ms-flex-line-pack: var(--align-content);
+    align-content: var(--align-content);
+    gap: var(--gap);
+    -ms-flex-preferred-size: var(--flex-basis);
+    flex-basis: var(--flex-basis);
+    -webkit-box-flex: var(--flex-grow);
+    -ms-flex-positive: var(--flex-grow);
+    flex-grow: var(--flex-grow);
+    -ms-flex-negative: var(--flex-shrink);
+    flex-shrink: var(--flex-shrink);
+    -webkit-box-ordinal-group: var(--order);
+    -ms-flex-order: var(--order);
+    order: var(--order);
+    -ms-flex-item-align: var(--align-self);
+    align-self: var(--align-self);
+}
+
+.elementor-widget-wrap {
+    position: relative;
+    width: 100%;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+}
+
+.elementor *, .elementor :after, .elementor :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.elementor-column-gap-default>.elementor-column>.elementor-element-populated {
+    padding: 10px;
+}
+
+.elementor:not(.elementor-bc-flex-widget) .elementor-widget-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+
+
 /* para cuando la pantalla es grande cambian algunas cosas para que se vea el menu complet*/
 @media only screen and (min-width: 560px) {
 	.nav_toggle {
