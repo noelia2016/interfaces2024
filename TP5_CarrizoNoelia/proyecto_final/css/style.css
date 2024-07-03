@@ -25,10 +25,22 @@ h2, h3, label, p, .content ul, button {
 
 /* contenedor ppal donde va a contener formularios y demas info a mostrar */
 .content {
-    padding-top: 65px;
+    padding-top: 5px;
 	background-color: var(--white);
     height: auto;
     padding-bottom: 3%;
+}
+
+/* banner contacto */
+
+#banner-contacto {
+    height:20%;
+    width:100%;
+}
+
+.formularios {
+
+
 }
 
 .nav {
@@ -165,33 +177,33 @@ footer a {
 
 .logo-footer {
     width: 6.5rem;
-    height: 5.5rem;
+    height: 5.5rem;  
 }
 
 /* para la galeria ppal de la home */
 .contenedor-galeria {
     display: grid;
     place-items: center;
-    width: 150px;
+
 }
 
 .galeria {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
-    max-width: 400px;
 }
 
 .contenedor-imagen {
+    padding-top: 5px;
     position: relative;
     left: 0;
     width: 1300px; /* altura de la galeria */
     border-radius: 5px;
-    height: 340px; /* altura de la galeria */
+    height: 400px; /* altura de la galeria */
     overflow: hidden;
     background-color: #efefef;
     transition: 0.4s ease-in-out;
-    box-shadow: 0 5px 12px rgb(0, 0, 0, 0.5);
+    box-shadow: 0 5px 12px rgba(151, 81, 81, 0.5);
     flex: 0.25;
 }
 
