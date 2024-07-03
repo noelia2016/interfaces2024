@@ -5,6 +5,7 @@
 	--gray: #abd1c6;
     --normal: #001e1d;
     --boton:#f9bc60;
+    --tertiary:#e16162;
 }
 
 body {
@@ -25,7 +26,7 @@ h2, h3, label, p, .content ul, button {
 
 /* contenedor ppal donde va a contener formularios y demas info a mostrar */
 .content {
-    padding-top: 5px;
+    padding-top: 15px;
 	background-color: var(--white);
     height: auto;
     padding-bottom: 3%;
@@ -38,11 +39,7 @@ h2, h3, label, p, .content ul, button {
     width:100%;
 }
 
-.formularios {
-
-
-}
-
+/* par el menu */
 .nav {
 	border-bottom: 1px solid var(--gray);
 }
@@ -220,111 +217,104 @@ footer a {
 }
 
 /* para los formularios de la web */
-.contenedor-form {
-    max-width: 1400px;
-    width: 70%;
-    padding: 20px;
-    box-sizing: border-box;
-    background-color: var(--secondary);
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    margin-left: 20%;
-}
-
-form {
+.signupFrm {
     display: flex;
-    flex-wrap: wrap;
-}
-
-.inputs, button.boton-form {
-    flex: 3 0 calc(33.33% - 10px);
-    padding: 10px;
-    margin: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button.boton-form {
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+  
+  
+  .form {
+    /*background-color: var(--gray);*/
+    width: 400px;
+    border-radius: 8px;
+    padding: 20px 40px;
+    box-shadow: 0 10px 25px var(--normal);
+  }
+  
+  .title {
+    font-size: 50px;
+    margin-bottom: 50px;
+    color: var(--normal);
+  }
+  
+  .inputContainer {
+    position: relative;
+    height: 45px;
+    width: 90%;
+    margin-bottom: 17px;
+  }
+  
+  .input {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    border: 1px solid var(--normal);
+    border-radius: 7px;
+    font-size: 16px;
+    padding: 0 20px;
+    outline: none;
+    background: none;
+    z-index: 1;
+  }
+  
+  
+  .label {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 0 4px;
+    background-color: var(--normal);
+    color: #DADCE0;
+    font-size: 16px;
+    transition: 0.5s;
+    z-index: 0;
+  }
+  
+  ::placeholder {
+    color: transparent;
+  }
+  
+  .submitBtn {
+    display: block;
+    margin-left: auto;
+    padding: 15px 30px;
+    border: none;
     background-color: var(--boton);
     color: var(--normal);
-    border: none;
+    border-radius: 6px;
     cursor: pointer;
-    border-radius: 0.5rem;
-    font-weight: bold;
-}
-
-
-/* para la home ppal */
-.elementor-element {
-    --widgets-spacing: 20px;
-}
-
-.elementor-element {
-    --flex-direction: initial;
-    --flex-wrap: initial;
-    --justify-content: initial;
-    --align-items: initial;
-    --align-content: initial;
-    --gap: initial;
-    --flex-basis: initial;
-    --flex-grow: initial;
-    --flex-shrink: initial;
-    --order: initial;
-    --align-self: initial;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: var(--flex-direction);
-    flex-direction: var(--flex-direction);
-    -ms-flex-wrap: var(--flex-wrap);
-    flex-wrap: var(--flex-wrap);
-    -webkit-box-pack: var(--justify-content);
-    -ms-flex-pack: var(--justify-content);
-    justify-content: var(--justify-content);
-    -webkit-box-align: var(--align-items);
-    -ms-flex-align: var(--align-items);
-    align-items: var(--align-items);
-    -ms-flex-line-pack: var(--align-content);
-    align-content: var(--align-content);
-    gap: var(--gap);
-    -ms-flex-preferred-size: var(--flex-basis);
-    flex-basis: var(--flex-basis);
-    -webkit-box-flex: var(--flex-grow);
-    -ms-flex-positive: var(--flex-grow);
-    flex-grow: var(--flex-grow);
-    -ms-flex-negative: var(--flex-shrink);
-    flex-shrink: var(--flex-shrink);
-    -webkit-box-ordinal-group: var(--order);
-    -ms-flex-order: var(--order);
-    order: var(--order);
-    -ms-flex-item-align: var(--align-self);
-    align-self: var(--align-self);
-}
-
-.elementor-widget-wrap {
-    position: relative;
-    width: 100%;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -ms-flex-line-pack: start;
-    align-content: flex-start;
-}
-
-.elementor *, .elementor :after, .elementor :before {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.elementor-column-gap-default>.elementor-column>.elementor-element-populated {
-    padding: 10px;
-}
-
-.elementor:not(.elementor-bc-flex-widget) .elementor-widget-wrap {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-}
-
-
+    font-size: 16px;
+    margin-top: 30px;
+  }
+  
+  .submitBtn:hover {
+    background-color: var(--tertiary);
+    transform: translateY(-2px);
+  }
+  .input:focus + .label {
+    top: -7px;
+    left: 3px;
+    z-index: 10;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--tertiary);
+  }
+  
+  .input:not(:placeholder-shown)+ .label {
+    top: -7px;
+    left: 3px;
+    z-index: 10;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+  .input:focus {
+    border: 2px solid var(--tertiary);
+  }
 
 /* para cuando la pantalla es grande cambian algunas cosas para que se vea el menu complet*/
 @media only screen and (min-width: 560px) {
