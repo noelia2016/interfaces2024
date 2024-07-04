@@ -35,6 +35,10 @@ h2, h3, label, p, .content ul, button {
     display: inline-block;
 }
 
+.content-form {
+  margin-left: 20%;
+}
+
 .adopcion-mascotas {
   padding: 15px;
   margin-left: 10%;
@@ -73,13 +77,19 @@ h2, h3, label, p, .content ul, button {
 }
 
 .home {
-  padding: 3px;
+  padding:3px;
   height:auto;
   width:100%;
-  background-color: var(--gray);
   /* Arriba | Derecha | Abajo | Izquierda */
   margin: 2px;
 }
+
+article {
+  padding: 12px;
+  height: auto;
+  margin-top: -45px;
+  margin-left: 45px;
+} 
 
 .banner-home {
   height:10%;
@@ -101,8 +111,7 @@ h2, h3, label, p, .content ul, button {
 /* contenedor de dond dirige las mascotas */
 #mis-mascotas {
   margin-top: 5px;
-  height:40%;
-  width:100%;
+  height:auto;
   padding: 25px;
   align-items: center;
   justify-content: center;
@@ -358,7 +367,9 @@ footer a {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 4%;
     height: auto;
+    margin-left: 20%;
   }
   
   
@@ -444,8 +455,27 @@ footer a {
     width: 100%;
     font-weight: bold;
   }
+
+  .submitBtn-dona {
+    display: block;
+    margin-left: 20%;
+    padding: 15px 30px;
+    border: none;
+    background-color: var(--tertiary);
+    color: var(--normal);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    width: 60%;
+    font-weight: bold;
+  }
+
+  a:link, a:visited, a:active {
+    text-decoration:none;
+  }
   
-  .submitBtn:hover {
+  .submitBtn:hover, .submitBtn-dona:hover {
     background-color: var(--tertiary);
     transform: translateY(-2px);
   }

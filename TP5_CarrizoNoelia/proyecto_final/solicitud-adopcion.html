@@ -22,7 +22,6 @@
 				<path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z" />
 			</svg>
 		</label>
-
 		<ul class="nav_menu">
 			<li class="menu_logo">
 				<img src="images/logo/logo_asoc.png" id="logo" alt="Logo de la ONG"/>
@@ -38,44 +37,34 @@
         </ul>
     </nav>
     <div class="content">
-        <section>
-            <div class="contenedor-form">
-                <h3>Solicitud de adopción</h3>
-                <form action="">          
-                    <div>
-                        <label for="" class="label">¿En que tipo de casa habitás?</label>
-                        <input type="radio" >CASA
-                        <input type="radio" >DEPARTAMENTO
-                    </div>
-                    <div>
-                        <label for="">¿Tenes otros animales?</label>
-                        <input type="radio">SI.
-                        <input type="radio">NO.
-                    </div>
-                    <div></div>
-                        <label for="">En caso de tener otros animales ¿están castrados?</label>
-                        <input type="radio">SI, todos estan castrados.
-                        <input type="radio">Algunas SI y otras NO.
-                        <input type="radio">NO tengo otros animales.
-                        <input type="radio">NO castré aún, pero lo voy hacer. 
-                    </div>
-                    <div>
-                        <label for="">Horarios en que te podemos contactar:</label>
-                        <input type="text" class="inputs">
-                    </div>
-                    <button class="boton-form">POSTULARME</button>
-                </form>
+        <div class="signupFrm">
+            <div class="wrapper">
+              <form action="" class="form">
+                <h1 class="title">Solicitud de adopción</h1>        
+                <div class="inputContainer">
+                  <input type="text" class="input" placeholder="a">
+                  <label for="" class="label">¿En que tipo de casa habitás?</label>
+                </div>
+                <div class="inputContainer">
+                    <input type="text" class="input" placeholder="a">
+                    <label for="" class="label">¿Dispones de espacio verde?</label>
+                </div>
+                <div class="inputContainer">
+                  <input type="text" class="input" placeholder="a">
+                  <label for="" class="label">¿Tenes otros animales?</label>
+                </div>
+                <div class="inputContainer">
+                    <input type="text" class="input" placeholder="a">
+                    <label for="" class="label">¿Tenes niños en el hogar?</label>
+                  </div>
+                <div class="inputContainer">
+                    <input type="text" class="input" placeholder="a">
+                    <label for="" class="label">Horarios en que te podemos contactar:</label>
+                </div>
+                <input type="submit" class="submitBtn" value="POSTULARME">
+              </form>
             </div>
-        </section>
-        <aside>
-            <!-- imagenes de mascotas graciosas o publicidad de sponsors -->
-            <img src="">
-            <!-- redes sociales-->
-            <ul>
-                <li>Facebook</li>
-                <li>Instagram</li>
-            </ul>
-        </aside>
+        </div>          
     </div>
     <footer class="footer">
         <div class="logo">
