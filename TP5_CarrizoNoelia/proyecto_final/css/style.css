@@ -3,10 +3,11 @@
 	--primary: #004643;
 	--white: #fffffe;
 	--gray: #abd1c6;
-    --normal: #001e1d;
-    --boton:#f9bc60;
-    --tertiary:#e16162;
+  --normal: #001e1d;
+  --boton:#f9bc60;
+  --tertiary:#e16162;
 }
+
 html{
     min-height: 100%;
 }
@@ -17,13 +18,18 @@ body {
     font-size: 14px;
     overflow-y: hidden; 
     overflow-x: hidden;
-    font-family: 'Roboto';font-size: 22px;
+    font-family: 'Roboto';
     color: var(--white);
 	  min-height: 100%;
 }
 
 h2, h3, label, p, .content ul, button {
     color: var(--normal);
+}
+
+.login-p {
+  font-size: 12px;
+  text-align: left;
 }
 
 /* contenedor ppal donde va a contener formularios y demas info a mostrar */
@@ -375,7 +381,6 @@ footer a {
   
   
   .form {
-    /*background-color: var(--gray);*/
     width: 400px;
     border-radius: 8px;
     padding: 20px 40px;
@@ -566,10 +571,12 @@ footer a {
     opacity: 0;
   }
 }
+
 .rotating-text-wrapper h2:nth-child(2) {
   background-color: tomato;
   animation-name: rotating-text-2;
 }
+
 @keyframes rotating-text-2 {
   33% {
     transform: translateY(100%);
@@ -583,10 +590,12 @@ footer a {
     opacity: 0;
   }
 }
+
 .rotating-text-wrapper h2:nth-child(3) {
   background-color: cornflowerblue;
   animation-name: rotating-text-3;
 }
+
 @keyframes rotating-text-3 {
   66% {
     transform: translateY(0);
@@ -601,6 +610,7 @@ footer a {
     opacity: 0;
   }
 }
+
 @media screen and (max-width: 576px) {
   .rotating-text-wrapper {
     font-size: 0.7rem;
