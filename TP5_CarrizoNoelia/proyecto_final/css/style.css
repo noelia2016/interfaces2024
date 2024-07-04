@@ -7,6 +7,9 @@
     --boton:#f9bc60;
     --tertiary:#e16162;
 }
+html{
+    min-height: 100%;
+}
 
 body {
     margin: 0;
@@ -16,8 +19,7 @@ body {
     overflow-x: hidden;
     font-family: 'Roboto';font-size: 22px;
     color: var(--white);
-    background-color: var(--primary);
-	
+	min-height: 100%;
 }
 
 h2, h3, label, p, .content ul, button {
@@ -35,14 +37,15 @@ h2, h3, label, p, .content ul, button {
 /* banner contacto */
 
 #banner-contacto {
-    height:20%;
+    height:5%;
     width:100%;
-    
 }
 
 /* par el menu */
 .nav {
+    padding-top: 5px;
 	border-bottom: 1px solid var(--gray);
+    background-color: var(--primary);
 }
 
 .nav_toggle {
@@ -76,6 +79,7 @@ h2, h3, label, p, .content ul, button {
 	gap: 2rem;
 	align-items: center;
 	margin: 1rem;
+    background-color: var(--primary);
 }
 
 .nav_menu li {
@@ -117,13 +121,15 @@ h2, h3, label, p, .content ul, button {
 
 /* estilos para el footer del sitio */
 .footer {
-	height: 30px;
+    background-color: var(--primary);
+	height: 120px;
 	display: flex;
     top: 3.5rem;
     margin-top: auto;
     position: relative;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem;
 }
 
 footer a {
@@ -261,6 +267,21 @@ footer a {
     background: none;
     z-index: 1;
   }
+
+  .input-f {
+    position: absolute;
+    top: 0.3px;
+    left: 0.3px;
+    height: 100%;
+    width: 100%;
+    border: 1px solid var(--normal);
+    border-radius: 7px;
+    font-size: 16px;
+    padding: 0 20px;
+    outline: none;
+    background: none;
+    z-index: 1;
+  }
   
   
   .label {
@@ -290,6 +311,8 @@ footer a {
     cursor: pointer;
     font-size: 16px;
     margin-top: 30px;
+    width: 100%;
+    font-weight: bold;
   }
   
   .submitBtn:hover {
