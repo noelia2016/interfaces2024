@@ -33,6 +33,7 @@ h2, h3, label, p, .content ul, button {
     height: auto;
     padding-bottom: 3%;
     display: inline-block;
+    margin-left: 30%;
 }
 
 .content-form {
