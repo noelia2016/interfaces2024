@@ -28,14 +28,44 @@ h2, h3, label, p, .content ul, button {
 
 /* contenedor ppal donde va a contener formularios y demas info a mostrar */
 .content {
-    padding-top: 15px;
+    padding-top: 5px;
 	  background-color: var(--white);
     height: auto;
     padding-bottom: 3%;
+    display: inline-block;
 }
 
-/* banner contacto */
+.adopcion-mascotas {
+  padding: 15px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
 
+#capa1, #capa2, #capa3{
+  font-size:15px;
+  border:2px;
+  border-style:solid;
+  margin:10px;
+  padding:20px;
+  height:auto;
+  background-color: var(--boton);
+  width:25%;
+  float:left;
+  border-top-left-radius: 55px;
+  border-bottom-right-radius: 55px;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.img-adoptar {
+  height: 340px;
+  width: 340px;
+  border-top-right-radius: 55px;
+  border-bottom-left-radius: 55px;
+} 
+
+/* banner contacto */
 #banner-contacto {
     height:5%;
     width:100%;
@@ -610,6 +640,23 @@ footer a {
   .input:focus {
     border: 2px solid var(--tertiary);
   }
+
+
+/* para la presentacion de quienes somos */
+.conocenos {
+  column-count: 2;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-gap: 60px;
+  -webkit-column-gap: 50px;
+  -moz-column-gap: 50px;
+  column-rule: 2px none #000000;
+  -webkit-column-rule: 2px none #000000;
+  -moz-column-rule: 2px none #000000;
+  padding: 35px;
+  margin-top: 15px;
+}
+
 
 /* para cuando la pantalla es grande cambian algunas cosas para que se vea el menu complet*/
 @media only screen and (min-width: 560px) {
