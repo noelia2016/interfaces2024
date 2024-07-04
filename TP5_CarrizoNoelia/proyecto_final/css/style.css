@@ -69,6 +69,7 @@ h2, h3, label, p, .content ul, button {
 #banner-contacto {
     height:5%;
     width:100%;
+    z-index: 1;
 }
 
 .home {
@@ -448,6 +449,7 @@ footer a {
     background-color: var(--tertiary);
     transform: translateY(-2px);
   }
+
   .input:focus + .label {
     top: -7px;
     left: 3px;
@@ -486,6 +488,94 @@ footer a {
 }
 
 
+#banner-donacion {
+  position: relative;
+  z-index: 1;
+}
+
+/*  aparece en la vista de quiero donar */
+.rotating-text-wrapper {
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: absolute;
+  z-index: 2;
+  margin-left: 40%;
+}
+
+.rotating-text-wrapper h2 {
+  font-size: 25px;
+  margin: 0;
+  padding: 0.3em;
+  color: #fff;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  opacity: 0;
+  text-align: center;
+}
+
+.rotating-text-wrapper h2:nth-child(1) {
+  background-color: lightseagreen;
+  animation-name: rotating-text-1;
+}
+
+@keyframes rotating-text-1 {
+  0% {
+    transform: translateY(200%);
+  }
+  33% {
+    transform: translateY(100%);
+    opacity: 1;
+  }
+  34% {
+    opacity: 0;
+  }
+}
+.rotating-text-wrapper h2:nth-child(2) {
+  background-color: tomato;
+  animation-name: rotating-text-2;
+}
+@keyframes rotating-text-2 {
+  33% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  66% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  67% {
+    opacity: 0;
+  }
+}
+.rotating-text-wrapper h2:nth-child(3) {
+  background-color: cornflowerblue;
+  animation-name: rotating-text-3;
+}
+@keyframes rotating-text-3 {
+  66% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  99% {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+@media screen and (max-width: 576px) {
+  .rotating-text-wrapper {
+    font-size: 0.7rem;
+  }
+}
+
 /* para cuando la pantalla es grande cambian algunas cosas para que se vea el menu complet*/
 @media only screen and (min-width: 560px) {
 	.nav_toggle {
@@ -499,5 +589,12 @@ footer a {
 	.nav_menu li {
 		display: block;
 	}
+}
+
+/* para scrolear en la web */
+.snap-container {
+  height: 100vh;
+  overflow: auto;  
+  scroll-snap-type: y mandatory;  
 }
 
