@@ -21,10 +21,19 @@ body {
     font-family: 'Roboto';
     color: var(--white);
 	  min-height: 100%;
+
 }
 
 h2, h3, label, p, .content ul, button {
     color: var(--normal);
+}
+
+span {
+  color: var(--normal);
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 10%;
 }
 
 .login-p {
@@ -34,16 +43,30 @@ h2, h3, label, p, .content ul, button {
 
 /* contenedor ppal donde va a contener formularios y demas info a mostrar */
 .content {
-    padding-top: 5px;
+    /*padding-top: 5px;*/
 	  background-color: var(--white);
     height: auto;
-    padding-bottom: 3%;
     display: inline-block;
-    margin-left: 30%;
+    padding-bottom: 25px;
+}
+
+.content-usuarios {
+  /*padding-top: 5px;*/
+  background-color: var(--white);
+  height: auto;
+  display: inline-block;
+  padding-bottom: 25px;
+  margin-top: 3%;
+  align-content: center;
+  margin-left: 30%;
 }
 
 .content-form {
-  margin-left: 20%;
+   margin-bottom: 45px;
+}
+
+.content-form .signupFrm {
+  margin-left: 10%;
 }
 
 .adopcion-mascotas {
@@ -87,16 +110,22 @@ h2, h3, label, p, .content ul, button {
   padding:3px;
   height:auto;
   width:100%;
-  /* Arriba | Derecha | Abajo | Izquierda */
-  margin: 2px;
+  margin-top: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
 }
 
 article {
-  padding: 12px;
+  padding: 18px;
   height: auto;
   margin-top: -45px;
   margin-left: 45px;
+  margin-bottom: 15px;
 } 
+
+aside {
+  margin-bottom: 15px;
+}
 
 .banner-home {
   height:10%;
@@ -119,7 +148,8 @@ article {
 #mis-mascotas {
   margin-top: 5px;
   height:auto;
-  padding: 25px;
+  padding: 5px;
+  display: block;
   align-items: center;
   justify-content: center;
   background-image: linear-gradient(22deg, var(--boton),var(--gray));
@@ -129,10 +159,15 @@ article {
   -o-background-size: cover;
 }
 
-#mis-mascotas h1,p {
+#mis-mascotas h1 {
   color: var(--normal); 
-  font-size: 55px;
-  margin: 50px;
+  font-size: 26px;
+  text-align: center;
+}
+
+#mis-mascotas p {
+  color: var(--normal); 
+  font-size: 18px;
   text-align: center;
 }
 
@@ -155,31 +190,6 @@ article {
 #mis-mascotas button:hover {
   background: var(--primary);
   transform: translateX(50%);
-}
-
-.one:hover {
-  animation-name: bounce;
-  animation-duration: 0.4s;
-  animation-timing-function: ease-in-out;
-  animation-delay: 0s;
-  animation-direction: alternate;
-  animation-iteration-count: 3s;
-  animation-fill-mode: forwards;
-  animation-play-state: running;
-}
-
-@keyframes bounce {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  25%,
-  75% {
-    transform: scale(0.9);
-  }
-  50% {
-    transform: scale(1.1);
-  }
 }
 
 /* par el menu */
@@ -268,11 +278,10 @@ article {
 /* estilos para el footer del sitio */
 .footer {
     background-color: var(--primary);
-	height: 120px;
-	display: flex;
+	  height: 120px;
+	  display: flex;
     top: 3.5rem;
     margin-top: auto;
-    position: relative;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
@@ -334,7 +343,7 @@ footer a {
 .contenedor-galeria {
     display: grid;
     place-items: center;
-
+    width: 100%;
 }
 
 .galeria {
@@ -377,8 +386,8 @@ footer a {
     padding-top: 4%;
     height: auto;
     margin-left: 20%;
+    margin-bottom: 5%;
   }
-  
   
   .form {
     width: 400px;
@@ -415,6 +424,39 @@ footer a {
     z-index: 1;
   }
 
+  .asunto {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 88%;
+    margin-left: 23%;
+    border: 1px solid var(--normal);
+    border-radius: 7px;
+    font-size: 16px;
+    padding: 0 20px;
+    outline: none;
+    background: none;
+    z-index: 1;
+  }
+
+  .consulta {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    margin-top: 23px;
+    border: 1px solid var(--normal);
+    border-radius: 7px;
+    font-size: 16px;
+    padding: 0 20px;
+    outline: none;
+    background: none;
+    z-index: 1;
+    width:100%;
+  }
+
   .input-f {
     position: absolute;
     top: 0.3px;
@@ -436,6 +478,18 @@ footer a {
     top: 15px;
     left: 15px;
     padding: 0 4px;
+    background-color: var(--normal);
+    color: #DADCE0;
+    font-size: 16px;
+    transition: 0.5s;
+    z-index: 0;
+  }
+
+  .label-text {
+    position: absolute;
+    top: -3px;
+    left: 15px;
+    padding: 3 4px;
     background-color: var(--normal);
     color: #DADCE0;
     font-size: 16px;
@@ -477,13 +531,39 @@ footer a {
     font-weight: bold;
   }
 
+  .submitBtnC {
+    display: block;
+    padding: 15px 30px;
+    border: none;
+    background-color: var(--tertiary);
+    color: var(--normal);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    width: 100%;
+    font-weight: bold;
+  }
+
+  /* estilo para la lista del conocenos */
+  ul li {
+    list-style: url('../images/iconos/icons8-me-gusta-64.png');
+    padding: 5px;
+  }
+
+  #video-ilustrativo {
+    align-items: center;
+    margin-left: 6%;
+  }
+
   a:link, a:visited, a:active {
     text-decoration:none;
   }
   
-  .submitBtn:hover, .submitBtn-dona:hover {
+  .submitBtn:hover, .submitBtnC:hover, .submitBtn-dona:hover {
     background-color: var(--tertiary);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
   }
 
   .input:focus + .label {
@@ -503,7 +583,7 @@ footer a {
     font-weight: 600;
   }
   
-  .input:focus {
+  .input:focus, .consulta:focus  {
     border: 2px solid var(--tertiary);
   }
 
