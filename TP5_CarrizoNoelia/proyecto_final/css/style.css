@@ -24,8 +24,12 @@ body {
 
 }
 
-h2, h3, label, p, .content ul, button {
+h2, h3, label, p, .content ul, button, #requisitos {
     color: var(--normal);
+}
+
+#requisitos {
+  padding: 30px;
 }
 
 span {
@@ -501,7 +505,25 @@ footer a {
   ::placeholder {
     color: transparent;
   }
-  
+
+  /* boton de adoptarme */
+  .submitBtnAdop {
+    display: block;
+    margin-left: auto;
+    padding: 15px 30px;
+    background-color: var(--tertiary);
+    color: var(--gray);
+    border-radius: 12px;
+    border: 2px solid var(--gray);
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 30px;
+    margin-left: 10px;
+    width: 80%;
+    font-weight: bold;
+
+  }
+
   .submitBtn {
     display: block;
     margin-left: auto;
@@ -563,7 +585,12 @@ footer a {
   }
   
   .submitBtn:hover, .submitBtnC:hover, .submitBtn-dona:hover {
-    background-color: var(--tertiary);
+    background-color: var(--boton);
+    transform: translateY(-3px);
+  }
+
+  .submitBtnAdop:hover {
+    background-color: var(--normal);
     transform: translateY(-3px);
   }
 
@@ -573,7 +600,7 @@ footer a {
     z-index: 10;
     font-size: 14px;
     font-weight: 600;
-    color: var(--tertiary);
+    color: var(--boton);
   }
   
   .input:not(:placeholder-shown)+ .label {
@@ -585,7 +612,7 @@ footer a {
   }
   
   .input:focus, .consulta:focus  {
-    border: 2px solid var(--tertiary);
+    border: 2px solid var(--boton);
   }
 
 
@@ -716,6 +743,7 @@ footer a {
 /* para scrolear en la web */
 .snap-container {
   height: 100vh;
+  width: auto;
   overflow: auto;  
   scroll-snap-type: y mandatory;  
 }
@@ -723,7 +751,10 @@ footer a {
 /* para la validacion del formulario */
 #nombreError {
   display: none;
-  font-size: 0.8em;
+  font-size: 18px;
+  color:var(--tertiary);
+  font-weight: bold;
+  padding-bottom: 10%;
 }
 
 #nombreError.visible {
@@ -731,5 +762,5 @@ footer a {
 }
 
 input.invalido {
-  border-color: red;
+  border-color: var(--tertiary);
 }
