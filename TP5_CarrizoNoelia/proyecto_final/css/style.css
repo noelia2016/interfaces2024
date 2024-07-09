@@ -70,20 +70,20 @@ span {
 }
 
 .adopcion-mascotas {
-  padding: 15px;
-  margin-left: 10%;
-  margin-right: 10%;
+  padding: 45px;
+  margin-left: 5%;
 }
 
 #capa1, #capa2, #capa3{
-  font-size:15px;
+  font-size:18px;
   border:2px;
   border-style:solid;
-  margin:10px;
-  padding:20px;
+  margin:5px;
+  margin-left:15px;
+  padding:25px;
   height:auto;
   background-color: var(--boton);
-  width:25%;
+  width:28%;
   float:left;
   border-top-left-radius: 55px;
   border-bottom-right-radius: 55px;
@@ -115,12 +115,13 @@ span {
   margin-right: 2px;
 }
 
+/* la galeria de mascotas con su info */
 article {
-  padding: 18px;
+  padding-left: 12px;
   height: auto;
-  margin-top: -45px;
-  margin-left: 45px;
-  margin-bottom: 15px;
+  margin-top: -15px;
+  margin-left: 35px;
+  margin-bottom: 35px;
 } 
 
 aside {
@@ -719,3 +720,16 @@ footer a {
   scroll-snap-type: y mandatory;  
 }
 
+/* para la validacion del formulario */
+#nombreError {
+  display: none;
+  font-size: 0.8em;
+}
+
+#nombreError.visible {
+  display: block;
+}
+
+input.invalido {
+  border-color: red;
+}
