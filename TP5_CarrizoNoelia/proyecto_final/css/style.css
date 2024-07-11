@@ -767,6 +767,13 @@ footer a {
 	.nav_menu li {
 		display: block;
 	}
+
+  .frase span{
+    padding:40px;
+    text-align: center;
+    display: flex;
+  }
+
 }
 
 /* para scrolear en la web */
